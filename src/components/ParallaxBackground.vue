@@ -23,19 +23,29 @@ const handleMouseMove = (event) => {
     <div
       ref="layer3"
       :style="{ transform: `translate(${mouseX / 3}px, ${mouseY / 3}px)` }"
-      class="absolute z-30 w-full h-full bg-cover bg-center bg-[url('/img/layer3.png')] blur"
+      class="absolute z-40 w-full h-full bg-cover bg-center bg-[url('/img/layer3.png')] blur"
+    ></div>
+
+    <div
+      class="absolute z-[35] w-full h-full bg-cover bg-center bg-[url('/img/layer3.png')] blur"
     ></div>
 
     <div
       ref="layer2"
       :style="{ transform: `translate(${mouseX / 2}px, ${mouseY / 2}px)` }"
-      class="absolute z-20 w-full h-full bg-cover bg-center bg-[url('/img/layer2.png')] blur-xl"
+      class="absolute z-30 w-full h-full bg-cover bg-center bg-[url('/img/layer2.png')] blur-xl"
+    ></div>
+
+    <div
+      class="absolute z-[25] w-full h-full bg-cover bg-center bg-[url('/img/layer2.png')] blur-xl"
     ></div>
 
     <div
       ref="layer1"
       :style="{ transform: `translate(${mouseX}px, ${mouseY}px)` }"
-      class="absolute z-21 w-full h-full bg-cover bg-center bg-[url('/img/layer1.jpg')]"
+      class="absolute z-20 w-full h-full bg-cover bg-center bg-[url('/img/layer1.jpg')] bg-primary"
     ></div>
+
+    <div class="absolute z-10 w-full h-full bg-cover bg-center bg-[url('/img/layer1.jpg')]"></div>
   </div>
 </template>
