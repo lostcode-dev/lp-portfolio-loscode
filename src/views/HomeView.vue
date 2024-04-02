@@ -10,11 +10,20 @@ const myElement = ref(null)
 onMounted(() => {
   gsap.to(myElement.value, { duration: 1, x: 100 })
 })
+
+const mouseX = ref(0)
+const mouseY = ref(0)
+
+const handleMouseMove = (event) => {
+  const { clientX, clientY } = event
+  mouseX.value = (clientX - window.innerWidth / 2) / 15
+  mouseY.value = (clientY - window.innerHeight / 2) / 15
+}
 </script>
 
 <template>
-  <div class="h-full">
-    <ParallaxBackground />
+  <div class="h-full" @mousemove="handleMouseMove">
+    <ParallaxBackground :mouseX="mouseX" :mouseY="mouseY" />
     <HeaderContent class="relative z-10" />
     <main class="relative z-10">
       <HomeSection />

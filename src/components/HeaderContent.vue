@@ -96,7 +96,7 @@ const navbarLinksRight = [
             :ref="link.ref"
             v-for="link in links"
             :key="link.ref"
-            class="h-10 w-10 p-2 rounded-full bg-white"
+            class="h-10 w-10 p-2 rounded-full bg-white social-media__button"
           >
             <a class="inline-block w-full h-full" :href="link.href" target="_blank">
               <component :is="link.icon" />
@@ -116,14 +116,14 @@ const navbarLinksRight = [
             </span>
           </li>
           <li ref="emaiContactRef" class="inline-block align-top text-2xl text-white">
-            example@example.com
+            lostcode.js@gmail.com
           </li>
         </ul>
       </div>
       <div>
         <ul class="flex gap-10 justify-between items-center text-white text-xl">
           <li v-for="link in navbarLinksLeft" :key="link.href">
-            <a class="inline-block w-full h-full font-semibold" :href="link.href">
+            <a class="inline-block w-full h-full font-semibold navbar__link" :href="link.href">
               {{ link.label }}
             </a>
           </li>
@@ -133,7 +133,7 @@ const navbarLinksRight = [
           </li>
 
           <li v-for="link in navbarLinksRight" :key="link.href">
-            <a class="inline-block w-full h-full font-semibold" :href="link.href">
+            <a class="inline-block w-full h-full font-semibold navbar__link" :href="link.href">
               {{ link.label }}
             </a>
           </li>
@@ -149,5 +149,18 @@ header {
   background: -webkit-linear-gradient(0deg, rgba(163, 11, 102, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
   background: linear-gradient(0deg, rgba(163, 11, 102, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a30b66",endColorstr="#000000",GradientType=1);
+}
+
+.social-media__button,
+.navbar__link {
+  transition: transform 0.3s ease;
+}
+
+.social-media__button:hover {
+  transform: scale(1.2) !important;
+}
+
+.navbar__link:hover {
+  transform: scale(1.2) !important;
 }
 </style>

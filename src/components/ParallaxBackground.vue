@@ -7,18 +7,20 @@ const layer2 = ref(null)
 const layer3 = ref(null)
 const layer4 = ref(null)
 
-const mouseX = ref(0)
-const mouseY = ref(0)
-
-const handleMouseMove = (event) => {
-  const { clientX, clientY } = event
-  mouseX.value = (clientX - window.innerWidth / 2) / 15
-  mouseY.value = (clientY - window.innerHeight / 2) / 15
-}
+const prosp = defineProps({
+  mouseX: {
+    type: Number,
+    default: 0
+  },
+  mouseY: {
+    type: Number,
+    default: 0
+  }
+})
 </script>
 
 <template>
-  <div class="fixed w-screen h-full bg-primary" @mousemove="handleMouseMove">
+  <div class="fixed w-screen h-full bg-primary">
     <div class="w-full z-50 h-screen bg-secondary/50 absolute"></div>
     <div
       ref="layer3"
