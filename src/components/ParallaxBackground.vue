@@ -103,7 +103,7 @@ body {
       rgba(0, 0, 0, 0.8) 60%,
       rgba(0, 0, 0, 1) 90%
     ),
-    url(img/stars.jpg);
+    url(/img/stars.jpg);
 
   background-size: cover;
   position: fixed;
