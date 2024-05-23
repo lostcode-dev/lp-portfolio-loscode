@@ -15,7 +15,7 @@ onMounted(() => {
 const mouseX = ref(0)
 const mouseY = ref(0)
 
-const handleMouseMove = (event) => {
+const handleMouseMove = (event: any) => {
   const { clientX, clientY } = event
   mouseX.value = (clientX - window.innerWidth / 2) / 15
   mouseY.value = (clientY - window.innerHeight / 2) / 15
