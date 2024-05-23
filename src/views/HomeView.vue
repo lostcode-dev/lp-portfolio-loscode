@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import { onMounted, ref } from 'vue'
 import HeaderContent from '../components/HeaderContent.vue'
 import HomeSection from '../components/HomeSection.vue'
+import AboutSection from '../components/AboutSection.vue'
 import ParallaxBackground from '../components/ParallaxBackground.vue'
 
 const myElement = ref(null)
@@ -27,6 +28,7 @@ const handleMouseMove = (event) => {
     <HeaderContent class="relative z-10" />
     <main class="relative z-10">
       <HomeSection />
+      <AboutSection />
     </main>
   </div>
 </template>
