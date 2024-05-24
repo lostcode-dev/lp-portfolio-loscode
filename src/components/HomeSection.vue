@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 
 const developing_solutions = [
   ...'DESENVOLVENDO'.split(''),
@@ -14,27 +14,42 @@ const developing_solutions = [
   ...'MUNDO'.split('')
 ]
 
-const we_make = 'CONSTRUINDO:'.split('')
+const innovation_pixel = [
+  ...'INOVAÇÃO'.split(''),
+  'br',
+  ...'EM'.split(''),
+  'br',
+  ...'CADA'.split(''),
+  'br',
+  ...'PIXEL'.split('')
+]
 
-const options = ['sites', 'aplicativos', 'automações', 'games']
+const tech_transforms = [
+  ...'TECNOLOGIA'.split(''),
+  'br',
+  ...'QUE'.split(''),
+  'br',
+  ...'TRANSFORMA'.split(''),
+  'br',
+  ...'EM'.split(''),
+  'br',
+  ...'EXPERIÊNCIAS'.split('')
+]
 
-const emojis: any = {
-  sites: '💻',
-  aplicativos: '📱',
-  automações: '🕹',
-  games: '🎮'
-}
+const design_function = [
+  ...'DESIGN'.split(''),
+  'br',
+  ...'E'.split(''),
+  'br',
+  ...'FUNCIONALIDADE'.split(''),
+  'br',
+  ...'UNIDOS'.split(''),
+  'br',
+  ...'INSPIRANDO'.split('')
+]
 
-function getEmoji(index: number) {
-  const option: string = options[index]
-
-  return emojis[option]
-}
-
-const we_make_options = options.map((item) => item.toUpperCase().split(''))
-
-function sceneDevelopingSolutions() {
-  let letters = document.getElementsByClassName('developing_solutions letter')
+function scene(className: string) {
+  let letters = document.getElementsByClassName(`${className} letter`)
   let timeline = gsap.timeline({ repeat: 1, yoyo: true })
   Array.from(letters).forEach((letter) => {
     timeline.fromTo(
@@ -46,49 +61,15 @@ function sceneDevelopingSolutions() {
   return timeline
 }
 
-function sceneWeMake() {
-  let timeline = gsap.timeline({ yoyo: true })
-  let letters = document.getElementsByClassName('we_make letter')
-  Array.from(letters).forEach((letter) => {
-    timeline.fromTo(
-      letter,
-      { opacity: 0, display: 'none' },
-      { opacity: 1, duration: 0.15, display: 'inline-flex' }
-    )
-  })
-
-  return timeline
-}
-
-function sceneOptionsWeMake() {
-  let timeline = gsap.timeline({ yoyo: true })
-  options.forEach((opt) => {
-    let letters = document.getElementsByClassName('we_make_options letter ' + opt)
-
-    let localTimeline = gsap.timeline({ repeat: 1, yoyo: true })
-    Array.from(letters).forEach((letter) => {
-      localTimeline.fromTo(
-        letter,
-        { opacity: 0, display: 'none' },
-        { opacity: 1, duration: 0.15, display: 'inline-block' }
-      )
-    })
-    timeline.add(localTimeline)
-  })
-
-  return timeline
-}
-
 onMounted(() => {
   gsap.to('#cursor', { opacity: 0, repeat: -1, yoyo: true, duration: 0.25, ease: 'power2.inOut' })
 
   let tlMaster = gsap.timeline({ repeat: -1 })
 
-  tlMaster.add(sceneDevelopingSolutions())
-  /*
-  tlMaster.add(sceneWeMake())
-  tlMaster.add(sceneOptionsWeMake())
-  */
+  tlMaster.add(scene('developing_solutions'))
+  tlMaster.add(scene('innovation_pixel'))
+  tlMaster.add(scene('tech_transforms'))
+  tlMaster.add(scene('design_function'))
 })
 </script>
 
@@ -104,30 +85,24 @@ onMounted(() => {
           >{{ letter }}</span
         >
       </template>
-      <!--
-      <template v-for="letter in we_make" :key="letter">
-        <span class="reddit-mono-extrabold we_make letter hidden">{{ letter }}</span>
+      <template v-for="(letter, letterIndex) in innovation_pixel">
+        <br v-if="letter === 'br'" class="innovation_pixel letter hidden" :key="letterIndex" />
+        <span v-else class="reddit-mono-extrabold innovation_pixel letter hidden" :key="letter">{{
+          letter
+        }}</span>
       </template>
-
-      <br class="we_make letter hidden" />
-
-      <template v-for="(word, index) in we_make_options" :key="index">
-        <span
-          class="reddit-mono-extrabold we_make_options letter hidden mr-3"
-          :class="[options[index]]"
-          >{{ getEmoji(index) }}
-        </span>
-        <template v-for="letter in word" :key="letter">
-          <span
-            class="reddit-mono-extrabold we_make_options letter hidden"
-            :class="[options[index]]"
-            >{{ letter }}</span
-          >
-        </template>
-        <br class="we_make_options letter hidden" />
+      <template v-for="(letter, letterIndex) in tech_transforms">
+        <br v-if="letter === 'br'" class="tech_transforms letter hidden" :key="letterIndex" />
+        <span v-else class="reddit-mono-extrabold tech_transforms letter hidden" :key="letter">{{
+          letter
+        }}</span>
       </template>
-      -->
-
+      <template v-for="(letter, letterIndex) in design_function">
+        <br v-if="letter === 'br'" class="design_function letter hidden" :key="letterIndex" />
+        <span v-else class="reddit-mono-extrabold design_function letter hidden" :key="letter">{{
+          letter
+        }}</span>
+      </template>
       <span id="cursor" class="reddit-mono-extrabold text-8xl text-white">_</span>
     </span>
   </section>

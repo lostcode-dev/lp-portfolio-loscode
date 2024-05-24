@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
+import { Draggable } from 'gsap/Draggable'
 import { onMounted, ref } from 'vue'
 import CommandLine from './CommandLine.vue'
 
+gsap.registerPlugin(Draggable)
+
 onMounted(() => {
   gsap.to('#cursor', { opacity: 0, repeat: -1, yoyo: true, duration: 0.25, ease: 'power2.inOut' })
-  gsap.fromTo(
+  /*gsap.fromTo(
     '.container-text-left',
     { top: '-20px' },
     { top: '0px', duration: 1.5, repeat: -1, yoyo: true }
@@ -14,12 +17,22 @@ onMounted(() => {
     '.container-text-right',
     { top: '-15px' },
     { top: '0px', duration: 2, repeat: -1, yoyo: true }
-  )
+  )*/
+
+  Draggable.create('.command-container', {
+    bounds: '#who_am_i_container',
+    inertia: true
+  })
+
+  Draggable.create('.perfil', {
+    bounds: '#who_am_i_container',
+    inertia: true
+  })
 })
 </script>
 
 <template>
-  <div class="w-full bg-black/80 py-4 relative">
+  <div id="who_am_i_container" class="w-full bg-black/80 py-4 relative">
     <div id="layer-1">
       <div id="layer-2">
         <div id="lines">
@@ -28,9 +41,9 @@ onMounted(() => {
       </div>
     </div>
 
-    <section id="who_am_i_section" class="text-white relative z-20">
+    <section id="who_am_i_section" class="text-white relative z-20 min-h-72">
       <div class="flex gap-5 my-16">
-        <CommandLine title="about-me" class="w-2/5 container-text-left">
+        <CommandLine id="about-me" title="about-me" class="w-2/5 -top-20">
           <li class="touch-none">
             Prazer em conhecê-lo! Eu sou Daniel, sou um
             <span class="text-indigo-400 touch-none">Web Developer</span>.
@@ -61,24 +74,35 @@ onMounted(() => {
         </CommandLine>
 
         <div class="w-1/5 flex items-center select-none touch-none">
-          <div class="rounded-full bg-white w-full picture mx-auto overflow-hidden touch-none">
+          <div
+            class="rounded-full bg-white w-full picture mx-auto overflow-hidden touch-none perfil"
+          >
             <img class="rounded-full w-full touch-none" src="/img/perfil.jpeg" alt="" />
           </div>
         </div>
 
         <div class="w-2/5">
-          <CommandLine title="where-i-work" class="h-40 container-text-left">
+          <CommandLine id="where-i-work" title="where-i-work" class="container-text-left">
             <li class="touch-none">Atualmente baseado no Porto, Portugal 🇵🇹</li>
             <li class="touch-none">
               Disponível para colaborações remotas na Europa 🇪🇺 e mundialmente 🌎
             </li>
           </CommandLine>
 
-          <CommandLine title="hobbies" class="h-40 container-text-right">
+          <CommandLine id="hobbies" title="hobbies" class="h-40 container-text-right">
             <li class="touch-none">📖 Leitura</li>
             <li class="touch-none">🥾 Explorar</li>
             <li class="touch-none">🎮 Jogos</li>
             <li class="touch-none">🏋🏻‍♂️ Exercício</li>
+          </CommandLine>
+
+          <CommandLine id="citation" title="citation" class="container-text-left">
+            <p class="touch-none">
+              "Existem duas maneiras de construir um projeto de software. Uma é fazê-lo tão simples
+              que obviamente não há falhas. A outra é fazê-lo tão complicado que não existem falhas
+              óbvias."
+            </p>
+            <p class="touch-none">👨🏻‍💻 C.A.R. HOAR</p>
           </CommandLine>
         </div>
       </div>
@@ -185,5 +209,21 @@ onMounted(() => {
   to {
     height: 155px;
   }
+}
+
+#about-me {
+  transform: translate3d(-131px, -3px, 0px);
+}
+
+#where-i-work {
+  transform: translate3d(-267px, -56px, 0px);
+}
+
+#citation {
+  transform: translate3d(-105px, 86px, 0px);
+}
+
+.perfil {
+  transform: translate3d(-64px, 2px, 0px);
 }
 </style>

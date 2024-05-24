@@ -42,17 +42,17 @@ const links = [
   {
     icon: GithubIcon,
     ref: 'githubRef',
-    href: 'https://github.com/lostcode-js'
+    href: 'https://github.com/lostcode-dev'
   },
   {
     icon: MediumIcon,
     ref: 'mediumRef',
-    href: 'https://medium.com/@lost-code'
+    href: 'https://ilostcode.medium.com/'
   },
   {
     icon: InstagramIcon,
     ref: 'instagramRef',
-    href: 'https://www.instagram.com/lostcode.js/'
+    href: 'https://www.instagram.com/ilostcode/'
   }
 ]
 
@@ -104,19 +104,17 @@ const navbarLinksRight = [
           </li>
         </ul>
         <ul class="absolute top-0 right-0 flex gap-2">
-          <li ref="emailRef" class="h-10 w-10 p-2 rounded-full bg-white inline-block align-top">
-            <a class="inline-block w-full h-full" target="_blank">
+          <li
+            ref="emailRef"
+            class="h-10 w-10 p-2 rounded-full bg-white inline-block align-top social-media__button"
+          >
+            <a
+              href="mailto:lostcode.js@gmail.com?subject=Proposta%20de%20Colaboração"
+              class="inline-block w-full h-full"
+              target="_blank"
+            >
               <EmailIcon />
             </a>
-          </li>
-          <li ref="emaiTextRef" class="inline-block align-top text-xs text-white">
-            <span>
-              EMAIL DE <br />
-              CONTATO
-            </span>
-          </li>
-          <li ref="emaiContactRef" class="inline-block align-top text-2xl text-white">
-            lostcode.js@gmail.com
           </li>
         </ul>
       </div>
