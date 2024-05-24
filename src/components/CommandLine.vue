@@ -26,7 +26,7 @@ const isMinimize = ref(false)
           <div class="flex gap-2 text-base-300 ml-auto" style="touch-action: none">
             <MinimizeIcon @click="isMinimize = true" />
             <ResizeIcon @click="isMinimize = false" />
-            <CloseIcon @click="isOpen = false" />
+            <CloseIcon class="opacity-50" />
           </div>
         </div>
         <div class="p-2 px-3 marker:text-white-400 list-decimal select-none">
