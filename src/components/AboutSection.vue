@@ -31,51 +31,54 @@ onMounted(() => {
     <section id="who_am_i_section" class="text-white relative z-20">
       <div class="flex gap-5 my-16">
         <CommandLine title="about-me" class="w-2/5 container-text-left">
-          <li>
+          <li class="touch-none">
             Prazer em conhecê-lo! Eu sou Daniel, sou um
-            <span class="text-indigo-400">Web Developer</span>.
+            <span class="text-indigo-400 touch-none">Web Developer</span>.
           </li>
-          <li>
+          <li class="touch-none">
             Sou apaixonado pelos dois
-            <span class="text-teal-400">web design</span> e
-            <span class="text-emerald-400">web development</span>, com foco especial em
-            <span class="text-cyan-400">front-end development</span> em todos os seus aspectos. Isso
-            é onde tanto meu <span class="text-sky-400">técnico</span> e minha
-            <span class="text-indigo-400">criatividade</span> podem ser usadas da melhor forma.
+            <span class="text-teal-400 touch-none">web design</span> e
+            <span class="text-emerald-400 touch-none">web development</span>, com foco especial em
+            <span class="text-cyan-400 touch-none">front-end development</span> em todos os seus
+            aspectos. Isso é onde tanto meu <span class="text-sky-400 touch-none">técnico</span> e
+            minha <span class="text-indigo-400 touch-none">criatividade</span> podem ser usadas da
+            melhor forma.
           </li>
-          <li>
-            Eu trago minha <span class="text-emerald-400">expertise</span> nas minhas colaborações
-            com <span class="text-teal-400">web agencies</span>,
-            <span class="text-red-400">startups</span>, e outros
-            <span class="text-purple-400">profissionais freelancers</span> na área, para agregar
-            valor aos projetos em que trabalho.
+          <li class="touch-none">
+            Eu trago minha <span class="text-emerald-400 touch-none">expertise</span> nas minhas
+            colaborações com <span class="text-teal-400 touch-none">web agencies</span>,
+            <span class="text-red-400 touch-none">startups</span>, e outros
+            <span class="text-purple-400 touch-none">profissionais freelancers</span> na área, para
+            agregar valor aos projetos em que trabalho.
           </li>
-          <li>
-            <span class="text-purple-400">Codificação</span> para mim não é só meu trabalho, eu
-            gosto de <span class="text-rose-400">experimentar</span> com várias
-            <span class="text-fuchsia-400">tecnologias</span> e eu também mantenho alguns
-            <span class="text-green-400">projetos pessoais</span>.
+          <li class="touch-none">
+            <span class="text-purple-400 touch-none">Codificação</span> para mim não é só meu
+            trabalho, eu gosto de <span class="text-rose-400 touch-none">experimentar</span> com
+            várias <span class="text-fuchsia-400 touch-none">tecnologias</span> e eu também mantenho
+            alguns <span class="text-green-400 touch-none">projetos pessoais</span>.
             <span id="cursor" class="silkscreen-regular text-white">_</span>
           </li>
         </CommandLine>
 
-        <div class="w-1/5 flex items-center">
-          <div class="rounded-full bg-white w-full picture mx-auto overflow-hidden">
-            <img class="rounded-full w-full" src="/img/perfil.jpeg" alt="" />
+        <div class="w-1/5 flex items-center select-none touch-none">
+          <div class="rounded-full bg-white w-full picture mx-auto overflow-hidden touch-none">
+            <img class="rounded-full w-full touch-none" src="/img/perfil.jpeg" alt="" />
           </div>
         </div>
 
         <div class="w-2/5">
           <CommandLine title="where-i-work" class="h-40 container-text-left">
-            <li>Atualmente baseado no Porto, Portugal 🇵🇹</li>
-            <li>Disponível para colaborações remotas na Europa 🇪🇺 e mundialmente 🌎</li>
+            <li class="touch-none">Atualmente baseado no Porto, Portugal 🇵🇹</li>
+            <li class="touch-none">
+              Disponível para colaborações remotas na Europa 🇪🇺 e mundialmente 🌎
+            </li>
           </CommandLine>
 
           <CommandLine title="hobbies" class="h-40 container-text-right">
-            <p style="touch-action: none">📖 Leitura</p>
-            <p style="touch-action: none">🥾 Explorar</p>
-            <p style="touch-action: none">🎮 Jogos</p>
-            <p style="touch-action: none">🏋🏻‍♂️ Exercício</p>
+            <li class="touch-none">📖 Leitura</li>
+            <li class="touch-none">🥾 Explorar</li>
+            <li class="touch-none">🎮 Jogos</li>
+            <li class="touch-none">🏋🏻‍♂️ Exercício</li>
           </CommandLine>
         </div>
       </div>
