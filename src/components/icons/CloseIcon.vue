@@ -1,0 +1,23 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 16 16"
+    class="icon"
+    width="1em"
+    height="1em"
+    data-v-b460ff61=""
+    style="touch-action: none"
+  >
+    <path
+      d="M3.53 3.53a.67.67 0 0 1 .94 0L8 7.06l3.53-3.53a.67.67 0 1 1 .94.94L8.94 8l3.53 3.53a.67.67 0 1 1-.94.94L8 8.94l-3.53 3.53a.67.67 0 1 1-.94-.94L7.06 8 3.53 4.47a.67.67 0 0 1 0-.94"
+      style="touch-action: none"
+    ></path>
+  </svg>
+</template>
+
+<script>
+export default {
+  name: 'CloseIcon'
+}
+</script>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
 import { onMounted, ref } from 'vue'
+import CommandLine from './CommandLine.vue'
 
 onMounted(() => {
   gsap.to('#cursor', { opacity: 0, repeat: -1, yoyo: true, duration: 0.25, ease: 'power2.inOut' })
@@ -29,36 +30,53 @@ onMounted(() => {
 
     <section id="who_am_i_section" class="text-white relative z-20">
       <div class="flex gap-5 my-16">
-        <div
-          class="bg-black p-4 border border-white rounded-md silkscreen-regular container-text-right relative w-2/5"
-        >
-          Olá, sou Daniel Soares, engenheiro de software entusiasta em UX. Especialista em
-          Aplicativos e Games com mais de 5 anos de experiência em mídias interativas. Possuo
-          experiência com equipes multinacionais, além de certificação compatível e 4 prêmios de
-          reconhecimento nacional junto à Funbites Games Studio. Trabalho com desenvolvimento iOS há
-          8 anos e tenho mais de 20 aplicativos publicados na App Store. Atualmente atuo na X-team e
-          compartilho conteúdo no canal LostCode.<span
-            id="cursor"
-            class="silkscreen-regular text-white"
-            >_</span
-          >
-        </div>
+        <CommandLine title="about-me" class="w-2/5 container-text-left">
+          <li>
+            Prazer em conhecê-lo! Eu sou Daniel, sou um
+            <span class="text-indigo-400">Web Developer</span>.
+          </li>
+          <li>
+            Sou apaixonado pelos dois
+            <span class="text-teal-400">web design</span> e
+            <span class="text-emerald-400">web development</span>, com foco especial em
+            <span class="text-cyan-400">front-end development</span> em todos os seus aspectos. Isso
+            é onde tanto meu <span class="text-sky-400">técnico</span> e minha
+            <span class="text-indigo-400">criatividade</span> podem ser usadas da melhor forma.
+          </li>
+          <li>
+            Eu trago minha <span class="text-emerald-400">expertise</span> nas minhas colaborações
+            com <span class="text-teal-400">web agencies</span>,
+            <span class="text-red-400">startups</span>, e outros
+            <span class="text-purple-400">profissionais freelancers</span> na área, para agregar
+            valor aos projetos em que trabalho.
+          </li>
+          <li>
+            <span class="text-purple-400">Codificação</span> para mim não é só meu trabalho, eu
+            gosto de <span class="text-rose-400">experimentar</span> com várias
+            <span class="text-fuchsia-400">tecnologias</span> e eu também mantenho alguns
+            <span class="text-green-400">projetos pessoais</span>.
+            <span id="cursor" class="silkscreen-regular text-white">_</span>
+          </li>
+        </CommandLine>
 
         <div class="w-1/5 flex items-center">
           <div class="rounded-full bg-white w-full picture mx-auto overflow-hidden">
             <img class="rounded-full w-full" src="/img/perfil.jpeg" alt="" />
           </div>
         </div>
-        <div
-          class="bg-black p-4 border border-white rounded-md silkscreen-regular container-text-left relative w-2/5 h-52"
-        >
-          <p class="title">CITAÇÃO</p>
-          <p class="content">
-            "Existem duas maneiras de construir um projeto de software. Uma é fazê-lo tão simples
-            que obviamente não há falhas. A outra é fazê-lo tão complicado que não existem falhas
-            óbvias."
-          </p>
-          <p class="author">C.A.R. HOAR</p>
+
+        <div class="w-2/5">
+          <CommandLine title="where-i-work" class="h-40 container-text-left">
+            <li>Atualmente baseado no Porto, Portugal 🇵🇹</li>
+            <li>Disponível para colaborações remotas na Europa 🇪🇺 e mundialmente 🌎</li>
+          </CommandLine>
+
+          <CommandLine title="hobbies" class="h-40 container-text-right">
+            <p style="touch-action: none">📖 Leitura</p>
+            <p style="touch-action: none">🥾 Explorar</p>
+            <p style="touch-action: none">🎮 Jogos</p>
+            <p style="touch-action: none">🏋🏻‍♂️ Exercício</p>
+          </CommandLine>
         </div>
       </div>
     </section>
