@@ -1,23 +1,17 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
 import { Draggable } from 'gsap/Draggable'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 import { onMounted, ref } from 'vue'
 import CommandLine from './CommandLine.vue'
+import AboutBackground from './AboutBackground.vue'
 
 gsap.registerPlugin(Draggable)
+gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
   gsap.to('#cursor', { opacity: 0, repeat: -1, yoyo: true, duration: 0.25, ease: 'power2.inOut' })
-  /*gsap.fromTo(
-    '.container-text-left',
-    { top: '-20px' },
-    { top: '0px', duration: 1.5, repeat: -1, yoyo: true }
-  )
-  gsap.fromTo(
-    '.container-text-right',
-    { top: '-15px' },
-    { top: '0px', duration: 2, repeat: -1, yoyo: true }
-  )*/
 
   Draggable.create('.command-container', {
     bounds: '#who_am_i_container',
@@ -32,18 +26,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="who_am_i_container" class="w-full bg-black/80 py-4 relative">
-    <div id="layer-1">
-      <div id="layer-2">
-        <div id="lines">
-          <div id="layer-corner"></div>
-        </div>
-      </div>
-    </div>
+  <div id="who_am_i_container" class="bg-black/80 py-4 relative h-screen panel w-screen">
+    <AboutBackground />
 
-    <section id="who_am_i_section" class="text-white relative z-20 min-h-72">
+    <section
+      id="who_am_i_section"
+      class="text-white relative z-20 h-full flex items-center w-screen"
+    >
       <div class="flex gap-5 my-16">
-        <CommandLine id="about-me" title="about-me" class="w-2/5 -top-20">
+        <CommandLine id="about-me" title="about-me" class="w-2/5 container-text">
           <li class="touch-none">
             Prazer em conhecê-lo! Eu sou Daniel, sou um
             <span class="text-indigo-400 touch-none">Web Developer</span>.
@@ -82,21 +73,21 @@ onMounted(() => {
         </div>
 
         <div class="w-2/5">
-          <CommandLine id="where-i-work" title="where-i-work" class="container-text-left">
+          <CommandLine id="where-i-work" title="where-i-work" class="container-text">
             <li class="touch-none">Atualmente baseado no Porto, Portugal 🇵🇹</li>
             <li class="touch-none">
               Disponível para colaborações remotas na Europa 🇪🇺 e mundialmente 🌎
             </li>
           </CommandLine>
 
-          <CommandLine id="hobbies" title="hobbies" class="h-40 container-text-right">
+          <CommandLine id="hobbies" title="hobbies" class="h-40 container-text">
             <li class="touch-none">📖 Leitura</li>
             <li class="touch-none">🥾 Explorar</li>
             <li class="touch-none">🎮 Jogos</li>
             <li class="touch-none">🏋🏻‍♂️ Exercício</li>
           </CommandLine>
 
-          <CommandLine id="citation" title="citation" class="container-text-left">
+          <CommandLine id="citation" title="citation" class="container-text">
             <p class="touch-none">
               "Existem duas maneiras de construir um projeto de software. Uma é fazê-lo tão simples
               que obviamente não há falhas. A outra é fazê-lo tão complicado que não existem falhas
@@ -127,96 +118,12 @@ onMounted(() => {
   }
 }
 
-#layer-1 {
-  background: linear-gradient(
-    to bottom,
-    rgb(0, 0, 0) 0%,
-    rgb(255, 71, 255) 2%,
-    rgb(255, 71, 255) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5c47ff', endColorstr='#ff47ff', GradientType=0 );
-  height: 100%;
-  width: inherit;
-  opacity: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  z-index: 10;
-}
-
-#layer-2 {
-  background: rgb(255, 71, 255);
-  background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 2%, rgb(255, 71, 255) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5c47ff', endColorstr='#5c47ff', GradientType=1 );
-  height: 100%;
-  width: inherit;
-  opacity: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  z-index: -5;
-}
-
-#layer-corner {
-  background: #60dcd3;
-  height: 5px;
-  width: inherit;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  z-index: -5;
-}
-
-#lines {
-  background-size: 40px 40px;
-  background-image: repeating-linear-gradient(
-      0deg,
-      #60dcd3,
-      #60dcd3 2px,
-      transparent 1px,
-      transparent 40px
-    ),
-    repeating-linear-gradient(-90deg, #60dcd3, #60dcd3 2px, transparent 2px, transparent 40px);
-  height: 100%;
-  width: 100%;
-  opacity: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -4;
-  animation: moveBackground 15s linear infinite;
-}
-
-@keyframes moveBackground {
-  0% {
-    background-position: 0 0, 0 0;
-  }
-  100% {
-    background-position: 400px 400px, 0px 0px;
-  }
-}
-
-@keyframes layerupanim {
-  from {
-    height: 140px;
-  }
-  to {
-    height: 155px;
-  }
-}
-
 #about-me {
-  transform: translate3d(-131px, -3px, 0px);
+  transform: translate3d(-130px, -3px, 0px);
 }
 
 #where-i-work {
-  transform: translate3d(-267px, -56px, 0px);
+  transform: translate3d(-265px, -56px, 0px);
 }
 
 #citation {
@@ -224,6 +131,6 @@ onMounted(() => {
 }
 
 .perfil {
-  transform: translate3d(-64px, 2px, 0px);
+  transform: translate3d(-65px, 2px, 0px);
 }
 </style>

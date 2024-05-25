@@ -63,7 +63,7 @@ const navbarLinksLeft = [
   },
   {
     label: 'QUEM SOU',
-    href: '#who_am_i_section'
+    href: '#about_section'
   },
   {
     label: 'O QUE FAÇO',
