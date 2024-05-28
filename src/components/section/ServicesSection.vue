@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import AboutBackground from './AboutBackground.vue'
-import SkillCard from './SkillCard.vue'
+import AboutBackground from '../background/AboutBackground.vue'
+import SkillCard from '../SkillCard.vue'
 import { gsap } from 'gsap'
 
 function getRandomNumber(min = 10, max = 20) {

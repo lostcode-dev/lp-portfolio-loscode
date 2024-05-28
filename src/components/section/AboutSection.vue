@@ -3,9 +3,9 @@ import { gsap } from 'gsap'
 import { Draggable } from 'gsap/Draggable'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-import { onMounted, ref } from 'vue'
-import CommandLine from './CommandLine.vue'
-import AboutBackground from './AboutBackground.vue'
+import { onMounted } from 'vue'
+import CommandLine from '../CommandLine.vue'
+import AboutBackground from '../background/AboutBackground.vue'
 
 gsap.registerPlugin(Draggable)
 gsap.registerPlugin(ScrollTrigger)

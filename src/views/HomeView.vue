@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
 import { onMounted, ref } from 'vue'
-import HeaderContent from '../components/HeaderContent.vue'
-import HomeSection from '../components/HomeSection.vue'
-import AboutSection from '../components/AboutSection.vue'
-import SkillsSection from '../components/SkillsSection.vue'
+import HeaderContent from '../components/header/HeaderContent.vue'
+import HomeSection from '../components/section/HomeSection.vue'
+import AboutSection from '../components/section/AboutSection.vue'
+import SkillsSection from '../components/section/SkillsSection.vue'
+import ServicesSection from '../components/section/ServicesSection.vue'
 
-import ParallaxBackground from '../components/ParallaxBackground.vue'
+import ParallaxBackground from '../components/background/ParallaxBackground.vue'
 
 import { Draggable } from 'gsap/Draggable'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -28,7 +29,7 @@ onMounted(() => {
       pin: true,
       scrub: 1,
       snap: 1 / (sections.length - 1),
-      end: () => '+=4000'
+      end: () => '+=' + (document.querySelector<HTMLElement>('#about_section')?.offsetWidth ?? '2000')
     }
   })
 })
@@ -52,6 +53,7 @@ const handleMouseMove = (event: any) => {
       <div id="about_section">
         <AboutSection />
         <SkillsSection />
+        <ServicesSection />
       </div>
     </main>
   </div>
@@ -62,6 +64,6 @@ const handleMouseMove = (event: any) => {
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
-  width: 200%;
+  width: 300%;
 }
 </style>
