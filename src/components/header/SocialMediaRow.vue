@@ -1,10 +1,12 @@
 <template>
-    <ul class="flex gap-2">
-        <SocialMediaButton v-for="link in socialMediaButtons" :key="link.ref" :link="link" />
-    </ul>
-    <ul class="absolute top-0 right-0 flex gap-2">
-        <SocialMediaButton :link="emailButton" />
-    </ul>
+  <ul class="flex gap-2">
+    <SocialMediaButton v-for="link in socialMediaButtons" :key="link.ref" :link="link" />
+  </ul>
+  <ul class="absolute top-0 right-0 flex gap-2">
+    <LanguageButton :link="emailButton" />
+    <SocialMediaButton :link="emailButton" />
+  
+  </ul>
 </template>
 
 <script setup>
@@ -14,6 +16,7 @@ import InstagramIcon from '../icons/InstagramIcon.vue'
 import EmailIcon from '../icons/EmailIcon.vue'
 
 import SocialMediaButton from './SocialMediaButton.vue'
+import LanguageButton from './LanguageButton.vue'
 
 const socialMediaButtons = [
   {
