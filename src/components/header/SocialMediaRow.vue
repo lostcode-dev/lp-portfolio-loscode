@@ -5,7 +5,6 @@
   <ul class="absolute top-0 right-0 flex gap-2">
     <LanguageButton :link="emailButton" />
     <SocialMediaButton :link="emailButton" />
-  
   </ul>
 </template>
 

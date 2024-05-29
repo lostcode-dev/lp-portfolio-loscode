@@ -2,14 +2,12 @@
     <li>
         <a class="inline-block w-full h-full font-semibold navbar__link" :href="link.href">
             {{ $t(link.label).toUpperCase() }}
-    
         </a>
     </li>
 </template>
 
 <script setup>
 const props = defineProps(['link'])
-
 </script>
 
 

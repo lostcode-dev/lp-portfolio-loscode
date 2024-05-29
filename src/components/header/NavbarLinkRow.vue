@@ -12,9 +12,6 @@
 import NavbarLink from './NavbarLink.vue'
 import HeaderLogo from './HeaderLogo.vue'
 
-import { useI18n } from 'vue-i18n';
-const { t } = useI18n();
-
 const navbarLinksLeft = [
   {
     label: 'home',

@@ -1,5 +1,5 @@
 <template>
-    <li :id="link.ref" class="h-10 w-10 p-2 rounded-full bg-white social-media__button">
+    <li :id="link.ref" class="h-10 w-10 p-2 rounded-full bg-white social-media__button relative">
         <a class="inline-block w-full h-full" :href="link.href" target="_blank">
             <component :is="link.icon" />
         </a>

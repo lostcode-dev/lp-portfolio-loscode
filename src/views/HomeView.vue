@@ -2,7 +2,7 @@
 import { gsap } from 'gsap'
 import { onMounted, ref } from 'vue'
 import HeaderContent from '../components/header/HeaderContent.vue'
-import HomeSection from '../components/section/HomeSection.vue'
+import HomeSection from '../components/section/home/HomeSection.vue'
 import AboutSection from '../components/section/AboutSection.vue'
 import SkillsSection from '../components/section/SkillsSection.vue'
 import ServicesSection from '../components/section/ServicesSection.vue'
@@ -15,11 +15,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(Draggable)
 gsap.registerPlugin(ScrollTrigger)
 
-const myElement = ref(null)
-
 onMounted(() => {
-  gsap.to(myElement.value, { duration: 1, x: 100 })
-
   let sections = gsap.utils.toArray('.panel')
   gsap.to(sections, {
     xPercent: -100 * (sections.length - 1),
