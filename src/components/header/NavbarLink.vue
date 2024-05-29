@@ -1,7 +1,8 @@
 <template>
     <li>
         <a class="inline-block w-full h-full font-semibold navbar__link" :href="link.href">
-            {{ link.label }}
+            {{ $t(link.label).toUpperCase() }}
+    
         </a>
     </li>
 </template>
