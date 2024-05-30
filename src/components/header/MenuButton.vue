@@ -1,9 +1,9 @@
 <template>
   <li id="menuBtn"
-    class="h-10 w-10 bg-white social-media__button relative flex items-center justify-center cursor-pointer rounded-full ">
+    class="h-10 w-10 bg-white social-media__button relative items-center justify-center cursor-pointer rounded-full flex lg:hidden">
     <HamburgerIcon v-model="isOpen" color="black" />
+    <MenuSidebar v-model="isOpen" />
   </li>
-  <MenuSidebar v-model="isOpen" />
 </template>
 
 <script setup>

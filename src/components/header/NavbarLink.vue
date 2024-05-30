@@ -1,6 +1,6 @@
 <template>
   <li>
-    <a class="font-semibold relative" :class="[link.class]" :href="link.href">
+    <a class="font-semibold relative" :class="[link.class]" :href="link.href" @click="$emit('clickLink')">
       {{ $t(link.label).toUpperCase() }}
     </a>
   </li>
