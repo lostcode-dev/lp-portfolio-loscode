@@ -5,7 +5,7 @@ import TextAnimation from './TextAnimation.vue'
 
 <template>
   <section class="">
-    <span class="text-container animated-text text-8xl text-white">
+    <span class="text-container animated-text text-4xl sm:text-5xl  md:text-6xl lg:text-7xl xl:text-8xl text-white">
       <TextAnimation :key="$i18n.locale" />
     </span>
   </section>

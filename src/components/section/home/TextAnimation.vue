@@ -1,6 +1,6 @@
 <template>
-    <WriteText v-for="value in writeText" :key="`locale-${$i18n.locale}-${value}`" :value="value" :classAnimation="value" />
-    <span id="cursor" class="reddit-mono-extrabold text-8xl text-white">_</span>
+  <WriteText v-for="value in writeText" :key="`locale-${$i18n.locale}-${value}`" :value="value" :classAnimation="value" />
+  <span id="cursor" class="reddit-mono-extrabold text-white">_</span>
 </template>
 
 <script setup lang="ts">

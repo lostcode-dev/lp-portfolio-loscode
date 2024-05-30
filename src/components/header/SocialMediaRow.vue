@@ -5,6 +5,7 @@
   <ul class="absolute top-0 right-0 flex gap-2">
     <LanguageButton :link="emailButton" />
     <SocialMediaButton :link="emailButton" />
+    <MenuButton />
   </ul>
 </template>
 
@@ -16,6 +17,7 @@ import EmailIcon from '../icons/EmailIcon.vue'
 
 import SocialMediaButton from './SocialMediaButton.vue'
 import LanguageButton from './LanguageButton.vue'
+import MenuButton from './MenuButton.vue'
 
 const socialMediaButtons = [
   {
