@@ -23,77 +23,78 @@ onMounted(() => {
     inertia: true
   })
 })
+
+
 </script>
 
 <template>
   <div id="who_am_i_container" class="bg-black/80 py-4 relative h-screen panel w-screen">
     <AboutBackground />
-
-    <section
-      id="who_am_i_section"
-      class="text-white relative z-20 h-full flex items-center w-screen"
-    >
+  
+    <section id="who_am_i_section" class="text-white relative z-20 h-full flex items-center w-screen">
       <div class="flex gap-5 my-16">
         <CommandLine id="about-me" title="about-me" class="w-2/5 container-text">
-          <li class="touch-none">
-            Prazer em conhecê-lo! Eu sou Daniel, sou um
-            <span class="text-indigo-400 touch-none">Web Developer</span>.
+          <li class="touch-none reddit-mono-bold">
+            {{ $t('about.greeting') }}
+            <span class="text-indigo-400 touch-none reddit-mono-bold">Software Developer</span>.
           </li>
-          <li class="touch-none">
-            Sou apaixonado pelos dois
-            <span class="text-teal-400 touch-none">web design</span> e
-            <span class="text-emerald-400 touch-none">web development</span>, com foco especial em
-            <span class="text-cyan-400 touch-none">front-end development</span> em todos os seus
-            aspectos. Isso é onde tanto meu <span class="text-sky-400 touch-none">técnico</span> e
-            minha <span class="text-indigo-400 touch-none">criatividade</span> podem ser usadas da
-            melhor forma.
+          <li class="touch-none reddit-mono-bold">
+            {{ $t('about.passion') }}
+            <span class="text-teal-400 touch-none reddit-mono-bold">web design</span> {{ $t('about.and') }}
+            <span class="text-emerald-400 touch-none reddit-mono-bold">web development</span>, {{ $t('about.with_focus')
+            }}
+            <span class="text-cyan-400 touch-none reddit-mono-bold">front-end development</span> {{
+            $t('about.in_all_aspects') }} <span class="text-sky-400 touch-none reddit-mono-bold">{{ $t('about.technician')
+              }}</span> {{ $t('about.and_my') }} <span class="text-indigo-400 touch-none reddit-mono-bold">{{
+              $t('about.creativity') }}</span> {{ $t('about.can_be_used_in_better_form') }}
           </li>
-          <li class="touch-none">
-            Eu trago minha <span class="text-emerald-400 touch-none">expertise</span> nas minhas
-            colaborações com <span class="text-teal-400 touch-none">web agencies</span>,
-            <span class="text-red-400 touch-none">startups</span>, e outros
-            <span class="text-purple-400 touch-none">profissionais freelancers</span> na área, para
-            agregar valor aos projetos em que trabalho.
+          <li class="touch-none reddit-mono-bold">
+            {{ $t('about.i_bring_my') }} <span class="text-emerald-400 touch-none reddit-mono-bold">{{
+              $t('about.expertise') }} </span> {{
+            $t('about.in_my_collaborations_with') }} <span class="text-teal-400 touch-none reddit-mono-bold">web
+              agencies</span>,
+            <span class="text-red-400 touch-none reddit-mono-bold">startups</span>, {{
+            $t('about.and_others') }}
+            <span class="text-purple-400 touch-none reddit-mono-bold">{{
+              $t('about.freelance_professionals') }}</span> {{
+            $t('about.in_the_area') }}
           </li>
-          <li class="touch-none">
-            <span class="text-purple-400 touch-none">Codificação</span> para mim não é só meu
-            trabalho, eu gosto de <span class="text-rose-400 touch-none">experimentar</span> com
-            várias <span class="text-fuchsia-400 touch-none">tecnologias</span> e eu também mantenho
-            alguns <span class="text-green-400 touch-none">projetos pessoais</span>.
+          <li class="touch-none reddit-mono-bold">
+            <span class="text-purple-400 touch-none reddit-mono-bold">{{ $t('about.coding') }}</span> {{
+            $t('about.for_me_its') }} <span class="text-rose-400 touch-none reddit-mono-bold">{{ $t('about.experiment')
+              }}</span> {{ $t('about.with_several') }} <span class="text-fuchsia-400 touch-none reddit-mono-bold">{{
+              $t('about.technologies') }}</span> {{ $t('about.and_i_also_maintain') }} <span
+              class="text-green-400 touch-none reddit-mono-bold">{{ $t('about.personal_projects') }}</span>.
             <span id="cursor" class="silkscreen-regular text-white">_</span>
           </li>
         </CommandLine>
-
-        <div class="w-1/5 flex items-center select-none touch-none">
-          <div
-            class="rounded-full bg-white w-full picture mx-auto overflow-hidden touch-none perfil"
-          >
-            <img class="rounded-full w-full touch-none" src="/img/perfil.jpeg" alt="" />
+  
+        <div class="w-1/5 flex items-center select-none touch-none reddit-mono-bold">
+          <div class="rounded-full bg-white w-full picture mx-auto overflow-hidden touch-none reddit-mono-bold perfil">
+            <img class="rounded-full w-full touch-none reddit-mono-bold" src="/img/perfil.jpeg" alt="" />
           </div>
         </div>
-
+  
         <div class="w-2/5">
           <CommandLine id="where-i-work" title="where-i-work" class="container-text">
-            <li class="touch-none">Atualmente baseado no Porto, Portugal 🇵🇹</li>
-            <li class="touch-none">
-              Disponível para colaborações remotas na Europa 🇪🇺 e mundialmente 🌎
+            <li class="touch-none reddit-mono-bold">{{ $t('about.location') }}</li>
+            <li class="touch-none reddit-mono-bold">
+              {{ $t('about.availability') }}
             </li>
           </CommandLine>
-
+  
           <CommandLine id="hobbies" title="hobbies" class="h-40 container-text">
-            <li class="touch-none">📖 Leitura</li>
-            <li class="touch-none">🥾 Explorar</li>
-            <li class="touch-none">🎮 Jogos</li>
-            <li class="touch-none">🏋🏻‍♂️ Exercício</li>
+            <li class="touch-none reddit-mono-bold">{{ $t('about.hobbies.reading') }}</li>
+            <li class="touch-none reddit-mono-bold">{{ $t('about.hobbies.exploring') }}</li>
+            <li class="touch-none reddit-mono-bold">{{ $t('about.hobbies.gaming') }}</li>
+            <li class="touch-none reddit-mono-bold">{{ $t('about.hobbies.exercising') }}</li>
           </CommandLine>
-
+  
           <CommandLine id="citation" title="citation" class="container-text">
-            <p class="touch-none">
-              "Existem duas maneiras de construir um projeto de software. Uma é fazê-lo tão simples
-              que obviamente não há falhas. A outra é fazê-lo tão complicado que não existem falhas
-              óbvias."
+            <p class="touch-none reddit-mono-bold">
+              {{ $t('about.citation') }}
             </p>
-            <p class="touch-none">👨🏻‍💻 C.A.R. HOAR</p>
+            <p class="touch-none reddit-mono-bold">👨🏻‍💻 C.A.R. HOAR</p>
           </CommandLine>
         </div>
       </div>
@@ -112,6 +113,7 @@ onMounted(() => {
     box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff11a7, 0 0 70px #ff11a7,
       0 0 80px #ff11a7, 0 0 100px #ff11a7, 0 0 150px #ff1177;
   }
+
   to {
     box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff11a7, 0 0 35px #ff11a7,
       0 0 40px #ff11a7, 0 0 50px #ff11a7, 0 0 75px #ff11a7;

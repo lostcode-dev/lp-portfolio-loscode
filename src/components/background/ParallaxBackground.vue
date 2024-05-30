@@ -1,16 +1,3 @@
-<script setup lang="ts">
-const props = defineProps({
-  mouseX: {
-    type: Number,
-    default: 0
-  },
-  mouseY: {
-    type: Number,
-    default: 0
-  }
-})
-</script>
-
 <template>
   <div class="background">
     <div id="hey">
@@ -312,7 +299,7 @@ body {
 
 @function random_range($min, $max) {
   $rand: random();
-  $random_range: $min +floor($rand * (($max - $min) + 1));
+  $random_range: $min+floor($rand * (($max - $min) + 1));
   @return $random_range;
 }
 

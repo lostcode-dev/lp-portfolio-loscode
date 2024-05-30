@@ -14,14 +14,12 @@ const isMinimize = ref(false)
   <div>
     <Transition name="opacity">
       <div
-        class="bg-black border select-none border-white rounded-md silkscreen-regular relative transition-all hover:shadow-xl cursor-pointer overflow-hidden command-container"
-        v-if="isOpen"
-        :class="{
-          'is-minimize': isMinimize,
-          'is-maximize': !isMinimize
-        }"
-      >
-        <div class="border-b border-b-white p-2 flex items-center select-none">
+        class="bg-black border select-none border-white rounded-md relative transition-all hover:shadow-xl cursor-pointer overflow-hidden command-container"
+        v-if="isOpen" :class="{
+                  'is-minimize': isMinimize,
+                  'is-maximize': !isMinimize
+                }">
+        <div class="border-b border-b-white p-2 flex items-center select-none silkscreen-regular ">
           <p>{{ title }}</p>
           <div class="flex gap-2 text-base-300 ml-auto" style="touch-action: none">
             <MinimizeIcon @click="isMinimize = true" />
@@ -29,7 +27,7 @@ const isMinimize = ref(false)
             <CloseIcon class="opacity-50" />
           </div>
         </div>
-        <div class="p-2 px-3 marker:text-white-400 list-decimal select-none">
+        <div class="p-2 px-3 marker:text-white-400 list-decimal select-none reddit-mono-semibold">
           <slot> </slot>
         </div>
       </div>

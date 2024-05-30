@@ -4,8 +4,9 @@ import TextAnimation from './TextAnimation.vue'
 </script>
 
 <template>
-  <section class="mx-auto md:ml-10 lg:ml-16 xl:mx-auto">
-    <span class="text-container animated-text text-5xl sm:text-6xl md:text-7xl xl:text-8xl text-white">
+  <section class="mx-auto md:ml-10 lg:ml-16 xl:mx-auto flex items-center sm:block">
+    <span
+      class="text-container animated-text text-5xl sm:text-6xl md:text-7xl xl:text-8xl text-white -mt-[10vh] sm:-mt-0 min-h-72 sm:min-h-auto">
       <TextAnimation :key="$i18n.locale" />
     </span>
   </section>
@@ -18,9 +19,5 @@ section {
 
 .animated-text span {
   display: inline-block;
-}
-
-.text-container {
-  margin-bottom: 110px;
 }
 </style>

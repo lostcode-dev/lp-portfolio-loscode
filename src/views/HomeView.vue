@@ -30,29 +30,21 @@ onMounted(() => {
   })
 })
 
-const mouseX = ref(0)
-const mouseY = ref(0)
-
-const handleMouseMove = (event: any) => {
-  const { clientX, clientY } = event
-  mouseX.value = (clientX - window.innerWidth / 2) / 15
-  mouseY.value = (clientY - window.innerHeight / 2) / 15
-}
 </script>
 
 <template>
-  <div class="h-full scroll-smooth" @mousemove="handleMouseMove">
-    <ParallaxBackground :mouseX="mouseX" :mouseY="mouseY" />
+  <div class="h-full scroll-smooth">
+    <ParallaxBackground />
     <HeaderContent class="relative z-10" />
     <main class="relative z-10 overflow-x-hidden">
       <HomeSection />
-      <!--
-          <div id="about_section">
-            <AboutSection />
-            <SkillsSection />
+      <div id="about_section">
+        <AboutSection />
+        <SkillsSection />
+        <!--
             <ServicesSection />
-          </div>
-          -->
+            -->
+      </div>
     </main>
   </div>
 </template>

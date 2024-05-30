@@ -7,7 +7,7 @@
     font-style: normal;
   }
   
-  .silkscreen-bold {
+.silkscreen-bold {
     font-family: "Silkscreen", sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -17,6 +17,20 @@
     font-family: "Reddit Mono", monospace;
     font-optical-sizing: auto;
     font-weight: 800;
+    font-style: normal;
+  }
+
+  .reddit-mono-semibold {
+    font-family: "Reddit Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .reddit-mono-bold {
+    font-family: "Reddit Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 700;
     font-style: normal;
   }
 
