@@ -21,8 +21,9 @@ function generateFromLeftAnimation() {
 function generateFromRightAnimation() {
   const fromRight = { x: 350 }
 
-  gsap.fromTo('#languageBtn', fromRight, { ...mediumTimeElement, ...toRotate })
   gsap.fromTo('#emailBtn', fromRight, { ...lastTimeElement, ...toRotate })
+  gsap.fromTo('#languageBtn', fromRight, { ...mediumTimeElement, ...toRotate })
+  gsap.fromTo('#menuBtn', fromRight, { ...firstTimeElement, ...toRotate })
 }
 
 function generateFromUpAnimation() {

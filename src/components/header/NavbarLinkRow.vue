@@ -3,7 +3,7 @@
     <NavbarLink v-for="link in navbarLinksLeft" :key="`${link.href}${$i18n.locale}`" :link="link"
       class="hidden lg:flex" />
   
-    <HeaderLogo class="hidden md:flex" />
+    <HeaderLogo class="hidden md:flex" size="h-20" />
   
     <NavbarLink v-for="link in navbarLinksRight" :key="`${link.href}${$i18n.locale}`" :link="link"
       class="hidden lg:flex" />
@@ -14,33 +14,6 @@
 import NavbarLink from './NavbarLink.vue'
 import HeaderLogo from './HeaderLogo.vue'
 
-const navbarLinksLeft = [
-  {
-    label: 'home',
-    href: '#home_section'
-  },
-  {
-    label: 'who_am_i',
-    href: '#about_section'
-  },
-  {
-    label: 'what_do_i_do',
-    href: '#what_do_i_do_section'
-  }
-]
+import { navbarLinksLeft, navbarLinksRight } from './navbarLinks'
 
-const navbarLinksRight = [
-  {
-    label: 'portfolio',
-    href: '#home_section'
-  },
-  {
-    label: 'articles',
-    href: '#article_section'
-  },
-  {
-    label: 'contact_us',
-    href: '#talk_with_us_section'
-  }
-]
 </script>

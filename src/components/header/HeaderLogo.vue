@@ -1,11 +1,13 @@
 <template>
-    <li id="brandIcon">
-        <BrandIcon class="h-20" />
-    </li>
+    <div id="brandIcon">
+        <BrandIcon :class="[size]" />
+    </div>
 </template>
 
 <script setup>
 import BrandIcon from '../icons/BrandIcon.vue'
+
+const props = defineProps(['size'])
 
 </script>
 

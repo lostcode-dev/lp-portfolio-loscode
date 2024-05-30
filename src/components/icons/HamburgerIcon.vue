@@ -12,7 +12,7 @@
 
 <script setup>
 const model = defineModel()
-
+const props = defineProps(['color'])
 </script>
 
 
@@ -34,7 +34,7 @@ const model = defineModel()
 
 .line {
     fill: none;
-    stroke: black;
+    stroke: v-bind(color);
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 3;

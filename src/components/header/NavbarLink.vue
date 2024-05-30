@@ -1,9 +1,9 @@
 <template>
-    <li>
-        <a class="inline-block w-full h-full font-semibold navbar__link" :href="link.href">
-            {{ $t(link.label).toUpperCase() }}
-        </a>
-    </li>
+  <li>
+    <a class="font-semibold relative" :class="[link.class]" :href="link.href">
+      {{ $t(link.label).toUpperCase() }}
+    </a>
+  </li>
 </template>
 
 <script setup>
@@ -27,10 +27,30 @@ onMounted(() => {
 
 <style scoped>
 .navbar__link {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .navbar__link:hover {
-    transform: scale(1.2) !important;
+  transform: scale(1.2) !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu__link::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -.25rem;
+  left: 0;
+  transition: width .4s;
+}
+
+.menu__link:hover::before {
+  width: 100%;
 }
 </style>
