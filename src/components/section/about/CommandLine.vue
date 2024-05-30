@@ -1,10 +1,28 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import CloseIcon from './icons/CloseIcon.vue'
-import MinimizeIcon from './icons/MinimizeIcon.vue'
-import ResizeIcon from './icons/ResizeIcon.vue'
+import { onMounted, ref } from 'vue'
+import CloseIcon from '../../icons/CloseIcon.vue'
+import MinimizeIcon from '../../icons/MinimizeIcon.vue'
+import ResizeIcon from '../../icons/ResizeIcon.vue'
+import { useWindowSize } from '@vueuse/core'
 
-const props = defineProps(['title'])
+const { width } = useWindowSize()
+
+const props = defineProps({
+  title: {
+    type: String,
+    default: ''
+  },
+  startMinimize: {
+    type: Boolean,
+    default: false
+  }
+})
+
+onMounted(() => {
+  if (width.value <= 640) {
+    isMinimize.value = props.startMinimize
+  }
+})
 
 const isOpen = ref(true)
 const isMinimize = ref(false)
@@ -16,9 +34,9 @@ const isMinimize = ref(false)
       <div
         class="bg-black border select-none border-white rounded-md relative transition-all hover:shadow-xl cursor-pointer overflow-hidden command-container"
         v-if="isOpen" :class="{
-                  'is-minimize': isMinimize,
-                  'is-maximize': !isMinimize
-                }">
+                                          'is-minimize': isMinimize,
+                                          'is-maximize': !isMinimize
+                                        }">
         <div class="border-b border-b-white p-2 flex items-center select-none silkscreen-regular ">
           <p>{{ title }}</p>
           <div class="flex gap-2 text-base-300 ml-auto" style="touch-action: none">

@@ -38,15 +38,17 @@ onMounted(() => {
     <AboutBackground />
   
     <section id="who_am_i_section" class="text-white relative z-20 h-full flex items-center w-screen">
-      <div class="flex w-full h-full gap-5 my-16 ">
-        <AboutBlock class="absolute w-96 lg:relative lg:w-2/5 top-[20%] lg:top-0 lg:left-0" />
-        <ImageBlock class="absolute w-40 sm:w-60 lg:relative lg:w-1/5 top-[40%] left-[35%] lg:top-0 lg:left-0" />
+      <div class="flex w-full lg:w-auto h-full lg:h-auto gap-5 my-16 ">
+        <AboutBlock class="absolute w-96 lg:flex lg:w-2/5 top-[10%] sm:top-[20%] lg:top-auto lg:relative" />
+        <ImageBlock
+          class="absolute w-40 sm:w-60 lg:flex lg:w-1/5 top-[40%]  left-[30%] sm:left-[35%] lg:top-auto lg:relative lg:left-auto" />
   
         <div class="lg:w-2/5">
-          <WorkBlock class="absolute w-80 lg:relative lg:w-auto top-[15%] right-4  lg:top-0 lg:left-0" />
+          <WorkBlock
+            class="absolute w-80 lg:flex lg:w-auto top-[18%] right-[12%] sm:right-4 lg:top-auto lg:relative lg:right-auto" />
           <HobbiesBlock
-            class="h-40 absolute w-80  lg:relative lg:w-auto bottom-[10%] sm:bottom-[40%] right-8 lg:top-0 lg:left-0" />
-          <CitationBlock class="absolute w-96  lg:relative lg:w-auto right-5 bottom-[10%] lg:top-0 lg:left-0" />
+            class="h-40 absolute w-80  lg:flex lg:w-auto bottom-[20%] sm:bottom-[40%] right-[12%] sm:right-8 lg:right-auto lg:bottom-auto lg:relative " />
+          <CitationBlock class="absolute w-96  lg:flex lg:w-auto right-5 bottom-[10%] lg:relative lg:right-auto" />
         </div>
       </div>
     </section>

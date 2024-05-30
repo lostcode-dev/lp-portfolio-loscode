@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import CommandLine from '../../CommandLine.vue'
+import CommandLine from './CommandLine.vue'
 </script>
 
 <template>
-  <CommandLine id="citation" title="citation" class="container-text">
+  <CommandLine id="citation" title="citation" class="container-text" start-minimize>
     <p class="touch-none reddit-mono-bold">
       {{ $t('about.citation') }}
     </p>
