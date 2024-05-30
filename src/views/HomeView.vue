@@ -3,7 +3,7 @@ import { gsap } from 'gsap'
 import { onMounted, ref } from 'vue'
 import HeaderContent from '../components/header/HeaderContent.vue'
 import HomeSection from '../components/section/home/HomeSection.vue'
-import AboutSection from '../components/section/AboutSection.vue'
+import AboutSection from '../components/section/about/AboutSection.vue'
 import SkillsSection from '../components/section/SkillsSection.vue'
 import ServicesSection from '../components/section/ServicesSection.vue'
 
@@ -42,8 +42,8 @@ onMounted(() => {
         <AboutSection />
         <SkillsSection />
         <!--
-            <ServicesSection />
-            -->
+              <ServicesSection />
+              -->
       </div>
     </main>
   </div>

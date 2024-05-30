@@ -1,0 +1,12 @@
+<script setup lang="ts">
+import CommandLine from '../../CommandLine.vue'
+</script>
+
+<template>
+  <CommandLine id="citation" title="citation" class="container-text">
+    <p class="touch-none reddit-mono-bold">
+      {{ $t('about.citation') }}
+    </p>
+    <p class="touch-none reddit-mono-bold">👨🏻‍💻 C.A.R. HOAR</p>
+  </CommandLine>
+</template>
