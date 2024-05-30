@@ -46,11 +46,13 @@ const handleMouseMove = (event: any) => {
     <HeaderContent class="relative z-10" />
     <main class="relative z-10 overflow-x-hidden">
       <HomeSection />
-      <div id="about_section">
-        <AboutSection />
-        <SkillsSection />
-        <ServicesSection />
-      </div>
+      <!--
+          <div id="about_section">
+            <AboutSection />
+            <SkillsSection />
+            <ServicesSection />
+          </div>
+          -->
     </main>
   </div>
 </template>

@@ -7,7 +7,21 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue';
+import { gsap } from 'gsap'
+
 const props = defineProps(['link'])
+
+onMounted(() => {
+  gsap.fromTo(
+    '.navbar__link',
+    { opacity: '0' },
+    {
+      opacity: '1',
+      duration: 0.5,
+    }
+  )
+})
 </script>
 
 

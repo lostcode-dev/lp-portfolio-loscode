@@ -1,10 +1,10 @@
 <template>
   <ul class="flex gap-10 justify-between items-center text-white text-xl">
-    <NavbarLink v-for="link in navbarLinksLeft" :key="link.href" :link="link" />
+    <NavbarLink v-for="link in navbarLinksLeft" :key="`${link.href}${$i18n.locale}`" :link="link" />
   
     <HeaderLogo />
   
-    <NavbarLink v-for="link in navbarLinksRight" :key="link.href" :link="link" />
+    <NavbarLink v-for="link in navbarLinksRight" :key="`${link.href}${$i18n.locale}`" :link="link" />
   </ul>
 </template>
 
