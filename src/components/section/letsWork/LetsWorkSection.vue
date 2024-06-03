@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import CommandLine from '../about/CommandLine.vue'
-import ImageBlock from '../about/ImageBlock.vue';
-import ActionButton from './ActionButton.vue'
-
+import CommandLine from '@/components/section/about/CommandLine.vue'
+import ImageBlock from '@/components/section/about/ImageBlock.vue';
+import ActionButton from '@/components/section/letsWork/ActionButton.vue'
 </script>
 
 <template>
@@ -14,7 +13,7 @@ import ActionButton from './ActionButton.vue'
           <div class="p-4">
             <p class="text-5xl">Let’s work together on your next project.</p>
             <a href="#talk_with_us_section">
-              <ActionButton class="mt-6">
+              <ActionButton class="mt-6" icon="arrow-left">
                 Entrar em contato
               </ActionButton>
             </a>
