@@ -1,7 +1,11 @@
-/* 
-  @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
-*/ 
 @import './font-family.css';
+
+:root {
+  --color-text: #D7D7D7;
+  --color-background: #2B2B2B;
+  --color-primary-bg: rgb(255, 71, 255);
+  --color-secondary-bg: #60dcd3;
+}
 
 *,
 *::before,

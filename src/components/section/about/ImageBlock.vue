@@ -1,13 +1,27 @@
+
+<script setup lang="ts">
+const props = defineProps({
+  isAnimated: {
+    type: Boolean,
+    default: false
+  },
+})
+
+</script>
+
 <template>
     <div class="flex items-center select-none touch-none">
-        <div class="rounded-full bg-white w-full picture mx-auto overflow-hidden touch-none reddit-mono-bold perfil">
+        <div class="rounded-full bg-white w-full picture mx-auto overflow-hidden touch-none reddit-mono-bold perfil" :class="{ 
+                        'picture--animated': isAnimated,
+                        'picture--neon': isAnimated
+                             }">
             <img class="rounded-full w-full touch-none reddit-mono-bold" src="/img/perfil.jpeg" alt="" />
         </div>
     </div>
 </template>
 
 <style scoped>
-.picture {
+.picture--neon {
     animation: neon1 1.5s ease-in-out infinite alternate;
 }
 

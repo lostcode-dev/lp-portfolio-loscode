@@ -3,7 +3,7 @@ import CommandLine from './CommandLine.vue'
 </script>
 
 <template>
-  <CommandLine id="citation" title="citation" class="container-text" start-minimize>
+  <CommandLine id="citation" title="citation" class="container-text" start-minimize is-animated>
     <p class="touch-none reddit-mono-bold">
       {{ $t('about.citation') }}
     </p>

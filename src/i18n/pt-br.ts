@@ -35,7 +35,7 @@ export default {
         with_several: 'com várias',
         technologies: 'tecnologias',
         and_i_also_maintain: 'e eu também mantenho alguns',
-        personal_projects: 'personal projects',
+        personal_projects: 'projetos pessoais',
 
         location: "Atualmente baseado no Porto, Portugal 🇵🇹",
         availability: "Disponível para colaborações remotas na Europa 🇪🇺 e mundialmente 🌎",

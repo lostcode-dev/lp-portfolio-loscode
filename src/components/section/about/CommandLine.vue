@@ -15,6 +15,10 @@ const props = defineProps({
   startMinimize: {
     type: Boolean,
     default: false
+  },
+  isAnimated: {
+    type: Boolean,
+    default: false
   }
 })
 
@@ -34,9 +38,10 @@ const isMinimize = ref(false)
       <div
         class="bg-black border select-none border-white rounded-md relative transition-all hover:shadow-xl cursor-pointer overflow-hidden command-container"
         v-if="isOpen" :class="{
-                                          'is-minimize': isMinimize,
-                                          'is-maximize': !isMinimize
-                                        }">
+                                  'command-container--animated': isAnimated,
+                                  'command-container--minimize': isMinimize,
+                                  'command-container--maximize': !isMinimize
+                                                                }">
         <div class="border-b border-b-white p-2 flex items-center select-none silkscreen-regular ">
           <p>{{ title }}</p>
           <div class="flex gap-2 text-base-300 ml-auto" style="touch-action: none">
@@ -58,11 +63,11 @@ const isMinimize = ref(false)
   transition: max-height 1.5s;
 }
 
-.is-minimize {
+.command-container--minimize {
   max-height: 41px;
 }
 
-.is-maximize {
+.command-container--maximize {
   max-height: 600px;
 }
 

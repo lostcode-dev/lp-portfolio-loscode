@@ -3,7 +3,7 @@ import CommandLine from './CommandLine.vue'
 </script>
 
 <template>
-    <CommandLine id="about-me" title="about-me" class="container-text" start-minimize>
+    <CommandLine id="about-me" title="about-me" class="container-text" start-minimize is-animated>
         <li class="touch-none reddit-mono-bold">
             {{ $t('about.greeting') }}
             <span class="text-indigo-400 touch-none reddit-mono-bold">Software Developer</span>.
