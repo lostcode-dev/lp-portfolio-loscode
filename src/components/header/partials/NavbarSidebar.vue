@@ -24,11 +24,11 @@
 
 <script setup>
 import { menuLinks } from './navbarLinks'
-import NavbarLink from './NavbarLink.vue'
+import NavbarLinkItem from './NavbarLinkItem.vue'
 
-import CloseIcon from '../icons/CloseIcon.vue';
-import ResizeIcon from '../icons/ResizeIcon.vue';
-import MinimizeIcon from '../icons/MinimizeIcon.vue';
+import CloseIcon from '../../icons/CloseIcon.vue';
+import ResizeIcon from '../../icons/ResizeIcon.vue';
+import MinimizeIcon from '../../icons/MinimizeIcon.vue';
 
 const model = defineModel()
 </script>

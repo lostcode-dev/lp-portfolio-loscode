@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TextAnimation from './TextAnimation.vue'
+import WriteAnimation from './partials/WriteAnimation.vue'
 
 </script>
 
@@ -7,7 +7,7 @@ import TextAnimation from './TextAnimation.vue'
   <section class="mx-auto md:ml-10 lg:ml-16 xl:mx-auto flex items-center sm:block">
     <span
       class="text-container animated-text text-5xl sm:text-6xl md:text-7xl xl:text-8xl text-white -mt-[10vh] sm:-mt-0 min-h-72 sm:min-h-auto">
-      <TextAnimation :key="$i18n.locale" />
+      <WriteAnimation :key="$i18n.locale" />
     </span>
   </section>
 </template>

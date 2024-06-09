@@ -6,11 +6,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { computed, onMounted } from 'vue'
 import AboutBackground from '../../background/AboutBackground.vue'
 
-import AboutBlock from './AboutBlock.vue'
-import ImageBlock from './ImageBlock.vue'
-import WorkBlock from './WorkBlock.vue'
-import HobbiesBlock from './HobbiesBlock.vue'
-import CitationBlock from './CitationBlock.vue'
+import CmdAbout from './partials/CmdAbout.vue'
+import CmdWork from './partials/CmdWork.vue'
+import CmdHobbies from './partials/CmdHobbies.vue'
+import CmdCitation from './partials/CmdCitation.vue'
+import ImageProfile from '@/components/ImageProfile.vue';
+
 import { useWindowSize } from '@vueuse/core'
 
 gsap.registerPlugin(Draggable)
@@ -46,18 +47,18 @@ const key = computed(() => {
   
     <section id="who_am_i_section" class="text-white relative z-20 h-full flex items-center w-screen">
       <div class="flex w-full lg:w-auto h-full lg:h-auto gap-5 my-16 ">
-        <AboutBlock :key="`about-block-${key}`"
+        <CmdAbout :key="`about-block-${key}`"
           class="absolute w-96 lg:flex lg:w-2/5 top-[10%] sm:top-[20%] lg:top-auto lg:relative" />
-        <ImageBlock
+        <ImageProfile
           class="absolute w-40 sm:w-60 lg:flex lg:w-1/5 top-[40%]  left-[30%] sm:left-[35%] lg:top-auto lg:relative lg:left-auto"
           is-animated />
   
         <div class="lg:w-2/5">
-          <WorkBlock :key="`work-block-${key}`"
+          <CmdWork :key="`work-block-${key}`"
             class="absolute w-80 lg:flex lg:w-auto top-[18%] right-[12%] sm:right-4 lg:top-auto lg:relative lg:right-auto" />
-          <HobbiesBlock :key="`hobbies-block-${key}`"
+          <CmdHobbies :key="`hobbies-block-${key}`"
             class="h-40 absolute w-80  lg:flex lg:w-auto bottom-[20%] sm:bottom-[40%] right-[12%] sm:right-8 lg:right-auto lg:bottom-auto lg:relative " />
-          <CitationBlock :key="`citation-block-${key}`"
+          <CmdCitation :key="`citation-block-${key}`"
             class="absolute w-96  lg:flex lg:w-auto right-5 bottom-[10%] lg:relative lg:right-auto" />
         </div>
       </div>

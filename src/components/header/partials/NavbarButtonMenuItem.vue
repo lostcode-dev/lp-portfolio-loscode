@@ -8,8 +8,8 @@
 
 <script setup>
 import { ref } from 'vue';
-import HamburgerIcon from '../icons/HamburgerIcon.vue';
-import MenuSidebar from './MenuSidebar.vue';
+import HamburgerIcon from '../../icons/HamburgerIcon.vue';
+import NavbarSidebar from './NavbarSidebar.vue';
 
 const isOpen = ref(false)
 </script>

@@ -2,8 +2,8 @@
 import { gsap } from 'gsap'
 import { onMounted } from 'vue'
 
-import SocialMediaRow from './SocialMediaRow.vue'
-import NavbarLinkRow from './NavbarLinkRow.vue'
+import NavbarButton from './partials/NavbarButton.vue'
+import NavbarLink from './partials/NavbarLink.vue'
 
 const lastTimeElement = { duration: 1.5 }
 const mediumTimeElement = { duration: 1 }
@@ -44,10 +44,10 @@ onMounted(() => {
   <header class="overflow-hidden">
     <section>
       <div class="mt-2 relative">
-        <SocialMediaRow />
+        <NavbarButton />
       </div>
       <div>
-        <NavbarLinkRow />
+        <NavbarLink />
       </div>
     </section>
   </header>

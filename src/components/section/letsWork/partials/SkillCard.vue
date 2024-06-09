@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TooltipLegend from './TooltipLegend.vue';
+import TooltipLegend from './SkillCardLegend.vue';
 const props = defineProps(['skill', 'size', 'color', 'src'])
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <WriteText v-for="value in writeText" :key="`locale-${$i18n.locale}-${value}`" :value="value" :classAnimation="value" />
+  <WriteAnimationItem v-for="value in writeText" :key="`locale-${$i18n.locale}-${value}`" :value="value" :classAnimation="value" />
   <span id="cursor" class="reddit-mono-extrabold text-white">_</span>
 </template>
 
@@ -7,7 +7,7 @@
 import { gsap } from 'gsap'
 import { onMounted } from 'vue'
 
-import WriteText from './WriteText.vue'
+import WriteAnimationItem from './WriteAnimationItem.vue'
 
 const writeText = ['developing_solutions', 'innovation_pixel', 'tech_transforms', 'design_function']
 var tlMaster = gsap.timeline({ repeat: -1 })

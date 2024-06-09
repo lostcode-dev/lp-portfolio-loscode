@@ -1,23 +1,23 @@
 <template>
   <ul class="flex gap-2">
-    <SocialMediaButton v-for="link in socialMediaButtons" :key="link.ref" :link="link" />
+    <NavbarButtonItem v-for="link in socialMediaButtons" :key="link.ref" :link="link" />
   </ul>
   <ul class="absolute top-0 right-0 flex gap-2 z-20">
-    <LanguageButton :link="emailButton" />
-    <SocialMediaButton :link="emailButton" />
-    <MenuButton />
+    <NavbarButtonLanguageItem :link="emailButton" />
+    <NavbarButtonItem :link="emailButton" />
+    <NavbarButtonMenuItem />
   </ul>
 </template>
 
 <script setup>
-import GithubIcon from '../icons/GithubIcon.vue'
-import MediumIcon from '../icons/MediumIcon.vue'
-import InstagramIcon from '../icons/InstagramIcon.vue'
-import EmailIcon from '../icons/EmailIcon.vue'
+import GithubIcon from '../../icons/GithubIcon.vue'
+import MediumIcon from '../../icons/MediumIcon.vue'
+import InstagramIcon from '../../icons/InstagramIcon.vue'
+import EmailIcon from '../../icons/EmailIcon.vue'
 
-import SocialMediaButton from './SocialMediaButton.vue'
-import LanguageButton from './LanguageButton.vue'
-import MenuButton from './MenuButton.vue'
+import NavbarButtonItem from './NavbarButtonItem.vue'
+import NavbarButtonLanguageItem from './NavbarButtonLanguageItem.vue'
+import NavbarButtonMenuItem from './NavbarButtonMenuItem.vue'
 
 const socialMediaButtons = [
   {

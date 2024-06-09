@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import BrandIcon from '../icons/BrandIcon.vue'
+import BrandIcon from '../../icons/BrandIcon.vue'
 
 const props = defineProps(['size'])
 

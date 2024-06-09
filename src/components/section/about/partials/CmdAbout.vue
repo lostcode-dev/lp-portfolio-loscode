@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import CommandLine from './CommandLine.vue'
+import CommandLine from '@/components/CommandLine.vue'
+
 </script>
 
 <template>
