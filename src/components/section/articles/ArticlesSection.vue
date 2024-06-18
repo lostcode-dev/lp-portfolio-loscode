@@ -1,5 +1,19 @@
 <script setup lang="ts">
 import AboutBackground from '@/components/background/AboutBackground.vue'
+import { parse } from 'rss-to-json'
+import { ref, onMounted } from 'vue'
+
+const articles = ref([])
+
+const fetchArticles = async () => {
+  const rss: any = await parse('https://medium.com/feed/@ilostcode')
+  articles.value = rss.items
+  console.log('articles', articles.value)
+}
+
+onMounted(() => {
+  fetchArticles()
+})
 </script>
 
 <template>
@@ -18,30 +32,28 @@ import AboutBackground from '@/components/background/AboutBackground.vue'
           <div
             class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
           >
-            <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+            <article
+              v-for="article in articles"
+              :key="article.id"
+              class="overflow-hidden rounded-lg shadow transition hover:shadow-lg"
+            >
               <img
-                alt=""
-                src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                :alt="article.title"
+                :src="article.thumbnail || 'https://via.placeholder.com/300'"
                 class="h-56 w-full object-cover"
               />
-
               <div class="bg-white p-4 sm:p-6">
-                <time datetime="2022-10-10" class="block text-xs text-gray-500">
-                  10th Oct 2022
+                <time
+                  :datetime="new Date(article.published).toISOString()"
+                  class="block text-xs text-gray-500"
+                >
+                  {{ new Date(article.published).toLocaleDateString() }}
                 </time>
-
-                <a href="#">
-                  <h3 class="mt-0.5 text-lg text-gray-900">
-                    How to position your furniture for positivity
-                  </h3>
+                <a :href="article.link" target="_blank">
+                  <h3 class="mt-0.5 text-lg text-gray-900">{{ article.title }}</h3>
                 </a>
-
                 <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores,
-                  possimus pariatur animi temporibus nesciunt praesentium dolore sed nulla ipsum
-                  eveniet corporis quidem, mollitia itaque minus soluta, voluptates neque explicabo
-                  tempora nisi culpa eius atque dignissimos. Molestias explicabo corporis
-                  voluptatem?
+                  {{ article.description }}
                 </p>
               </div>
             </article>
