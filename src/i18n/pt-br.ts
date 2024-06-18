@@ -49,4 +49,25 @@ export default {
 
         citation: `"Existem duas maneiras de construir um projeto de software. Uma é fazê-lo tão simples que obviamente não há falhas. A outra é fazê-lo tão complicado que não existem falhas óbvias."`,
     },
+    we_work: {
+        sites: 'Sites',
+        applications: 'Aplicativos',
+        automations: 'Automações',
+        games: 'Games',
+        building: 'Construindo:'
+    },
+    show_more: 'Ver Mais',
+    show_less: 'Ver Menos',
+    services: {
+        web_development:
+            "Envolve a criação e manutenção de sites. Abrange vários aspectos, incluindo design web, desenvolvimento de conteúdo web, scripting lado cliente/servidor e configuração de segurança de rede. Com foco em design responsivo e experiência do usuário, o desenvolvimento web garante que os sites sejam funcionais e visualmente atraentes.",
+        mobile_development:
+            "Foco na criação de aplicativos móveis e Progressive Web Apps (PWAs) que proporcionam experiências de usuário perfeitas e responsivas. PWAs combinam as melhores características de aplicativos web e móveis, oferecendo capacidades offline, notificações push e tempos de carregamento rápidos. Processo de desenvolvimento garante que os aplicativos sejam acessíveis, confiáveis e envolventes em todos os dispositivos.",
+        game_development:
+            "Envolve a criação de experiências interativas através da programação e produção de videogames. Abrange várias disciplinas como design de jogo, criação de arte, programação e teste de garantia de qualidade. Os desenvolvedores de jogos utilizam ferramentas e tecnologias avançadas para criar jogabilidade envolvente, narrativas cativantes e mundos imersivos que divertem e desafiam os jogadores.",
+        dapp_development:
+            "Envolve a criação de aplicativos descentralizados que operam em uma blockchain ou rede descentralizada. Esses aplicativos utilizam contratos inteligentes para automatizar processos e interações, garantindo transparência, segurança e descentralização. DAPPs geralmente incluem uma interface frontend para os usuários interagirem com as funcionalidades baseadas em blockchain.",
+        bot_development:
+            "Envolve a criação de ferramentas de software automatizadas que realizam tarefas normalmente realizadas por humanos. Essas ferramentas utilizam linguagens de script e frameworks para otimizar processos, melhorar a eficiência e reduzir as cargas de trabalho manuais. O desenvolvimento de bots visa automatizar tarefas repetitivas em diversas plataformas, aumentando a produtividade e a escalabilidade."
+    }
 }

@@ -37,7 +37,6 @@ onMounted(() => {
   generateFromRightAnimation()
   generateFromUpAnimation()
 })
-
 </script>
 
 <template>

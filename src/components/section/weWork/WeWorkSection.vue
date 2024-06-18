@@ -1,25 +1,28 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
-import { onMounted } from 'vue'
+import { onMounted, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
-const we_make = 'CONSTRUINDO:'.split('')
+const we_make = computed(() => t('we_work.building').toUpperCase().split(''))
 
-const options = ['sites', 'aplicativos', 'automações', 'games']
+const optionsKeys = ['sites', 'applications', 'automations', 'games']
+const options = computed(() => optionsKeys.map((word) => t(`we_work.${word}`)))
 
 const emojis: any = {
   sites: '💻',
-  aplicativos: '📱',
-  automações: '🕹',
+  applications: '📱',
+  automations: '🕹',
   games: '🎮'
 }
 
 function getEmoji(index: number) {
-  const option: string = options[index]
+  const option: string = optionsKeys[index]
 
   return emojis[option]
 }
 
-const we_make_options = options.map((item) => item.toUpperCase().split(''))
+const we_make_options = options.value.map((item) => item.toUpperCase().split(''))
 
 function sceneWeMake() {
   let timeline = gsap.timeline({ yoyo: true })
@@ -37,7 +40,7 @@ function sceneWeMake() {
 
 function sceneOptionsWeMake() {
   let timeline = gsap.timeline({ yoyo: true })
-  options.forEach((opt) => {
+  options.value.forEach((opt) => {
     let letters = document.getElementsByClassName('we_make_options letter ' + opt)
 
     let localTimeline = gsap.timeline({ repeat: 1, yoyo: true })
@@ -65,32 +68,36 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="">
-    <span class="text-container animated-text text-8xl text-white">
-      <template v-for="letter in we_make" :key="letter">
-        <span class="reddit-mono-extrabold we_make letter hidden">{{ letter }}</span>
-      </template>
+  <div class="relative z-[60]" style="box-shadow: 0 -15px 10px rgba(0, 0, 0, 0.5)">
+    <div class="bg-black py-20" style="box-shadow: rgba(0, 0, 0, 0.5) 0px 15px 10px">
+      <section class="!min-h-80">
+        <span class="text-container animated-text text-8xl text-white">
+          <template v-for="letter in we_make" :key="letter">
+            <span class="reddit-mono-extrabold we_make letter hidden">{{ letter }}</span>
+          </template>
 
-      <br class="we_make letter hidden" />
+          <br class="we_make letter hidden" />
 
-      <template v-for="(word, index) in we_make_options" :key="index">
-        <span
-          class="reddit-mono-extrabold we_make_options letter hidden mr-3"
-          :class="[options[index]]"
-          >{{ getEmoji(index) }}
+          <template v-for="(word, index) in we_make_options" :key="index">
+            <span
+              class="reddit-mono-extrabold we_make_options letter hidden mr-3"
+              :class="[options[index]]"
+              >{{ getEmoji(index) }}
+            </span>
+            <template v-for="letter in word" :key="letter">
+              <span
+                class="reddit-mono-extrabold we_make_options letter hidden"
+                :class="[options[index]]"
+                >{{ letter }}</span
+              >
+            </template>
+            <br class="we_make_options letter hidden" />
+          </template>
+          <span id="cursor" class="reddit-mono-extrabold text-8xl text-white">_</span>
         </span>
-        <template v-for="letter in word" :key="letter">
-          <span
-            class="reddit-mono-extrabold we_make_options letter hidden"
-            :class="[options[index]]"
-            >{{ letter }}</span
-          >
-        </template>
-        <br class="we_make_options letter hidden" />
-      </template>
-      <span id="cursor" class="reddit-mono-extrabold text-8xl text-white">_</span>
-    </span>
-  </section>
+      </section>
+    </div>
+  </div>
 </template>
 
 <style scoped>

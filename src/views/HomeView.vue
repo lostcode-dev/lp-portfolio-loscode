@@ -16,12 +16,17 @@ import ParallaxBackground from '@/components/background/ParallaxBackground.vue'
   <div class="h-full scroll-smooth">
     <ParallaxBackground />
     <HeaderContent class="relative z-10" />
+
     <main class="relative z-10 overflow-x-hidden">
       <HomeSection />
       <div id="about_section">
         <AboutSection />
-        <WeWorkSection />
-        <ServicesSection />
+      </div>
+
+      <WeWorkSection :key="`locale-${$i18n.locale}`" />
+      <ServicesSection />
+
+      <div>
         <LetsWorkSection />
         <ProjectsSection />
         <ArticlesSection />

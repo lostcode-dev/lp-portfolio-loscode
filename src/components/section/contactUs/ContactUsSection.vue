@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import CommandLine from '@/components/section/about/CommandLine.vue'
+import CommandLine from '@/components/CommandLine.vue'
 import MeshGradient from '@/components/background/MeshGradientBg.vue'
-import ActionButton from '@/components/section/letsWork/ActionButton.vue'
+import SkillCardButton from '@/components/section/letsWork/partials/SkillCardButton.vue'
 
 </script>
 
@@ -62,11 +62,11 @@ import ActionButton from '@/components/section/letsWork/ActionButton.vue'
   
   
             <div class="ml-7">
-              <ActionButton icon="message">
+              <SkillCardButton icon="message">
                 <span class="overflow-hidden">
                   Submit message
                 </span>
-              </ActionButton>
+              </SkillCardButton>
             </div>
           </form>
         </div>

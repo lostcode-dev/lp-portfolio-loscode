@@ -1,8 +1,8 @@
-<script setup lang="ts">
+<script setup>
 import { onMounted, ref } from 'vue'
-import CloseIcon from '../../icons/CloseIcon.vue'
-import MinimizeIcon from '../../icons/MinimizeIcon.vue'
-import ResizeIcon from '../../icons/ResizeIcon.vue'
+import CloseIcon from './icons/CloseIcon.vue'
+import MinimizeIcon from './icons/MinimizeIcon.vue'
+import ResizeIcon from './icons/ResizeIcon.vue'
 import { useWindowSize } from '@vueuse/core'
 
 const { width } = useWindowSize()
@@ -16,6 +16,10 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
+  startMinimizeMobile: {
+    type: Boolean,
+    default: false
+  },
   isAnimated: {
     type: Boolean,
     default: false
@@ -24,12 +28,12 @@ const props = defineProps({
 
 onMounted(() => {
   if (width.value <= 640) {
-    isMinimize.value = props.startMinimize
+    isMinimize.value = props.startMinimizeMobile
   }
 })
 
 const isOpen = ref(true)
-const isMinimize = ref(false)
+const isMinimize = ref(props.startMinimize)
 </script>
 
 <template>
@@ -37,12 +41,16 @@ const isMinimize = ref(false)
     <Transition name="opacity">
       <div
         class="bg-black border select-none border-white rounded-md relative transition-all hover:shadow-xl cursor-pointer overflow-hidden command-container"
-        v-if="isOpen" :class="{
-                                  'command-container--animated': isAnimated,
-                                  'command-container--minimize': isMinimize,
-                                  'command-container--maximize': !isMinimize
-                                                                }">
-        <div class="border-b border-b-white p-2 flex items-center select-none silkscreen-regular ">
+        v-if="isOpen"
+        :class="{
+          'command-container--animated': isAnimated,
+          'command-container--minimize': isMinimize,
+          'command-container--maximize': !isMinimize
+        }"
+      >
+        <div
+          class="border-b border-b-white p-2 flex items-center select-none silkscreen-regular text-white"
+        >
           <p>{{ title }}</p>
           <div class="flex gap-2 text-base-300 ml-auto" style="touch-action: none">
             <MinimizeIcon @click="isMinimize = true" />
