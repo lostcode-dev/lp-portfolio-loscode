@@ -3,7 +3,7 @@ import AboutBackground from '@/components/background/AboutBackground.vue'
 import { parse } from 'rss-to-json'
 import { ref, onMounted } from 'vue'
 
-const articles = ref([])
+const articles: any = ref([])
 
 const fetchArticles = async () => {
   const rss: any = await parse('https://medium.com/feed/@ilostcode')
