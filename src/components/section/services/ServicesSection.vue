@@ -75,7 +75,7 @@ const services = [
     </section>
     <AboutBackground
       :show-layer-corner="false"
-      animation-line="30s"
+      animation-line="25s"
       secondary-color="rgb(255, 71, 255)"
       primary-color="rgb(143, 0, 255)"
     />

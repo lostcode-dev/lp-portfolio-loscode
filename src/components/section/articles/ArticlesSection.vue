@@ -6,9 +6,16 @@ import { ref, onMounted } from 'vue'
 const articles: any = ref([])
 
 const fetchArticles = async () => {
-  const rss: any = await parse('https://medium.com/feed/@ilostcode')
-  articles.value = rss.items
-  console.log('articles', articles.value)
+  const rss: any = await parse('https://corsproxy.io/?https://medium.com/feed/@ilostcode')
+  articles.value = rss.items.slice(0, 6).map((article: any) => ({
+    ...article,
+    thumbnail: extractFirstImageSrc(article.content)
+  }))
+}
+
+const extractFirstImageSrc = (html: string) => {
+  const imgTagMatch = html.match(/<img[^>]+src="([^">]+)"/i)
+  return imgTagMatch ? imgTagMatch[1] : null
 }
 
 onMounted(() => {
@@ -19,13 +26,13 @@ onMounted(() => {
 <template>
   <div class="relative">
     <section class="relative z-20">
-      <div class="bg-white py-24 sm:py-32">
+      <div class="bg-black py-24 sm:py-16 rounded-lg">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto lg:mx-0 text-center">
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl uppercase">
+            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl uppercase">
               From the blog
             </h2>
-            <p class="mt-2 text-lg leading-8 text-gray-600">
+            <p class="mt-2 text-lg leading-8 text-white">
               Learn how to grow your business with our expert advice.
             </p>
           </div>
@@ -35,14 +42,14 @@ onMounted(() => {
             <article
               v-for="article in articles"
               :key="article.id"
-              class="overflow-hidden rounded-lg shadow transition hover:shadow-lg"
+              class="overflow-hidden rounded-lg shadow transition hover:shadow-2xl hover:shadow-indigo-500/80 border border-gray-200"
             >
               <img
                 :alt="article.title"
                 :src="article.thumbnail || 'https://via.placeholder.com/300'"
                 class="h-56 w-full object-cover"
               />
-              <div class="bg-white p-4 sm:p-6">
+              <div class="bg-white py-2 px-4 sm:px-6 h-full">
                 <time
                   :datetime="new Date(article.published).toISOString()"
                   class="block text-xs text-gray-500"
@@ -64,7 +71,7 @@ onMounted(() => {
 
     <AboutBackground
       :show-layer-corner="false"
-      animation-line="30s"
+      animation-line="35s"
       secondary-color="rgb(143, 0, 255)"
       primary-color="rgb(128, 0, 128)"
     />
