@@ -2,6 +2,7 @@
 import { gsap } from 'gsap'
 import { onMounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+
 const { t } = useI18n()
 
 const we_make = computed(() => t('we_work.building').toUpperCase().split(''))
@@ -68,8 +69,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="relative z-[60]" style="box-shadow: 0 -15px 10px rgba(0, 0, 0, 0.5)">
-    <div class="bg-black py-20" style="box-shadow: rgba(0, 0, 0, 0.5) 0px 15px 10px">
+  <div
+    ref="weWorkSection"
+    class="relative z-[60]"
+    style="box-shadow: 0 -15px 10px rgba(0, 0, 0, 0.5)"
+  >
+    <div class="bg-black/70 py-20" style="box-shadow: rgba(0, 0, 0, 0.5) 0px 15px 10px">
       <section class="!min-h-80">
         <span class="text-container animated-text text-8xl text-white">
           <template v-for="letter in we_make" :key="letter">

@@ -1,3 +1,5 @@
+import { get } from "@vueuse/core";
+
 export default {
     home: 'Home',
     who_am_i: 'Who am I',
@@ -60,15 +62,27 @@ export default {
     show_less: 'Show Less',
 
     services: {
-        web_development:
-            'Involves creating and maintaining websites. It encompasses several aspects, including web design, web content development, client-side/server-side scripting, and network security configuration. With a focus on responsive design and user experience, web development ensures that websites are both functional and visually appealing.',
-        mobile_development:
-            'Focuses on creating mobile applications and Progressive Web Apps (PWAs) that provide seamless and responsive user experiences. PWAs combine the best features of web and mobile apps, offering offline capabilities, push notifications, and fast load times. This development process ensures that applications are accessible, reliable, and engaging across all devices.',
-        game_development:
-            'Involves creating interactive experiences through the design, programming, and production of video games. It encompasses various disciplines such as game design, art creation, programming, and quality assurance testing. Game developers utilize advanced tools and technologies to create engaging gameplay, captivating narratives, and immersive worlds that entertain and challenge players.',
-        dapp_development:
-            'Involves creating decentralized applications that operate on a blockchain or decentralized network. These applications utilize smart contracts to automate processes and interactions, ensuring transparency, security, and decentralization. DAPPs typically include a frontend interface for users to interact with the blockchain-based functionalities.',
-        bot_development:
-            'Involves creating automated software tools that perform tasks typically done by humans. These tools use scripting languages and frameworks to streamline processes, improve efficiency, and reduce manual workloads. Bot development aims to automate repetitive tasks across various platforms, enhancing productivity and scalability.',
-    }
+        web_development: `
+        Involves creating and maintaining websites. It encompasses several aspects, including <strong>web design</strong>, 
+        <strong>web content development</strong>, <strong>client-side/server-side scripting</strong>, and 
+        <strong>network security configuration</strong>.<br>
+        With a focus on <em>responsive design</em> and <em>user experience</em>, web development ensures that websites are both 
+        <strong>functional</strong> and <strong>visually appealing</strong>.
+          `,
+        mobile_development: `
+        Focuses on creating <strong>mobile applications</strong> and <strong>Progressive Web Apps (PWAs)</strong> that provide 
+        <em>seamless</em> and <em>responsive</em> user experiences.<br>
+        PWAs combine the best features of web and mobile apps, offering <strong>offline capabilities</strong>, 
+        <strong>push notifications</strong>, and <strong>fast load times</strong>.<br>
+        This development process ensures that applications are <strong>accessible</strong>, <strong>reliable</strong>, and 
+        <strong>engaging</strong> across all devices.
+          `,
+        creative_development: `
+        Combines <strong>technology</strong> and <strong>design</strong> to create innovative and interactive digital experiences.<br>
+        Includes <strong>interface design</strong>, <strong>animations</strong>, <strong>immersive experiences</strong>, and custom interactive solutions.<br>
+        The focus is on <em>creativity</em>, <em>usability</em>, and <em>visual impact</em>, ensuring that digital products are engaging and memorable. <br>
+        Include <strong>interactive 3D websites</strong>, <strong>WebGL experiences</strong>, <strong>generative design</strong>, and <strong>dynamic Motion Design animations</strong> that captivate users.`,
+    },
+    lets_work_together: 'Let’s work together on your next project.',
+    get_in_touch: 'Get in touch',
 }

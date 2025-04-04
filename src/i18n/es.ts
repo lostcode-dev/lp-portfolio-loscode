@@ -1,73 +1,87 @@
 export default {
-    home: 'Home',
-    who_am_i: 'Quién soy yo',
-    what_do_i_do: 'Lo que hago',
-    portfolio: 'Portafolio',
-    articles: 'Artículos',
-    contact_us: 'Contáctanos',
+  home: 'Home',
+  who_am_i: 'Quién soy yo',
+  what_do_i_do: 'Lo que hago',
+  portfolio: 'Portafolio',
+  articles: 'Artículos',
+  contact_us: 'Contáctanos',
 
-    developing_solutions: 'Desarrollando_Soluciones_Para_Oh_Mundo',
-    innovation_pixel: 'Innovación_En_Cada_Píxel',
-    tech_transforms: 'Tecnología_Qué_Transformar_En_Experiencias',
-    design_function: 'Diseño_Es_Funcionalidad_Unido_Inspirador',
+  developing_solutions: 'Desarrollando_Soluciones_Para_Oh_Mundo',
+  innovation_pixel: 'Innovación_En_Cada_Píxel',
+  tech_transforms: 'Tecnología_Qué_Transformar_En_Experiencias',
+  design_function: 'Diseño_Es_Funcionalidad_Unido_Inspirador',
 
-    about: {
-        greeting: "Encantado de conocerte! Soy Daniel, soy un ",
-        passion: "Soy apasionado por ambos",
-        and: "y",
-        with_focus: 'con un enfoque especial en',
-        in_all_aspects: 'en todos sus aspectos. Aquí es donde tanto mi',
-        technician: 'técnico',
-        and_my: 'y mi',
-        creativity: 'creatividad',
-        can_be_used_in_better_form: 'pueden ser utilizados de la mejor manera',
+  about: {
+    greeting: "Encantado de conocerte! Soy Daniel, soy un ",
+    passion: "Soy apasionado por ambos",
+    and: "y",
+    with_focus: 'con un enfoque especial en',
+    in_all_aspects: 'en todos sus aspectos. Aquí es donde tanto mi',
+    technician: 'técnico',
+    and_my: 'y mi',
+    creativity: 'creatividad',
+    can_be_used_in_better_form: 'pueden ser utilizados de la mejor manera',
 
-        i_bring_my: 'Aporto mi',
-        expertise: 'experiencia',
-        in_my_collaborations_with: 'en mis colaboraciones con',
-        and_others: 'y otros',
-        freelance_professionals: 'profesionales freelance',
-        in_the_area: 'en el área, para agregar valor a los proyectos en los que trabajo.',
+    i_bring_my: 'Aporto mi',
+    expertise: 'experiencia',
+    in_my_collaborations_with: 'en mis colaboraciones con',
+    and_others: 'y otros',
+    freelance_professionals: 'profesionales freelance',
+    in_the_area: 'en el área, para agregar valor a los proyectos en los que trabajo.',
 
-        coding: 'Programación',
-        for_me_its: 'para mí no es solo mi trabajo, me gusta',
-        experiment: 'experimentar',
-        with_several: 'con varias',
-        technologies: 'tecnologías',
-        and_i_also_maintain: 'y también mantengo algunos',
-        personal_projects: 'proyectos personales',
+    coding: 'Programación',
+    for_me_its: 'para mí no es solo mi trabajo, me gusta',
+    experiment: 'experimentar',
+    with_several: 'con varias',
+    technologies: 'tecnologías',
+    and_i_also_maintain: 'y también mantengo algunos',
+    personal_projects: 'proyectos personales',
 
-        location: "Actualmente basado en Oporto, Portugal 🇵🇹",
-        availability: "Disponible para colaboraciones remotas en Europa 🇪🇺 y mundialmente 🌎",
+    location: "Actualmente basado en Oporto, Portugal 🇵🇹",
+    availability: "Disponible para colaboraciones remotas en Europa 🇪🇺 y mundialmente 🌎",
 
-        hobbies: {
-            reading: "📖 Lectura",
-            exploring: "🥾 Exploración",
-            gaming: "🎮 Juegos",
-            exercising: "🏋🏻‍♂️ Ejercicio",
-        },
-
-        citation: `"Hay dos formas de construir un proyecto de software. Una es hacerlo tan simple que obviamente no hay fallos. La otra es hacerlo tan complicado que no hay fallos obvios."`,
+    hobbies: {
+      reading: "📖 Lectura",
+      exploring: "🥾 Exploración",
+      gaming: "🎮 Juegos",
+      exercising: "🏋🏻‍♂️ Ejercicio",
     },
-    we_work: {
-        sitios: 'sitios',
-        applications: 'aplicaciones',
-        automations: 'automatizaciones',
-        games: 'Juegos',
-        building: 'Creando:'
-    },
-    show_more: 'Ver Más',
-    show_less: 'Ver Menos',
-    services: {
-        web_development:
-            "Involucra la creación y mantenimiento de sitios web. Abarca varios aspectos, incluido el diseño web, el desarrollo de contenido web, la programación del lado del cliente/servidor y la configuración de seguridad de la red. Con un enfoque en el diseño receptivo y la experiencia del usuario, el desarrollo web garantiza que los sitios web sean funcionales y visualmente atractivos.",
-        mobile_development:
-            "Se centra en la creación de aplicaciones móviles y Progressive Web Apps (PWAs) que proporcionan experiencias de usuario fluidas y receptivas. Las PWAs combinan las mejores características de las aplicaciones web y móviles, ofreciendo capacidades offline, notificaciones push y tiempos de carga rápidos. Este proceso de desarrollo garantiza que las aplicaciones sean accesibles, confiables y atractivas en todos los dispositivos.",
-        game_development:
-            "Involucra la creación de experiencias interactivas a través del diseño, la programación y la producción de videojuegos. Abarca diversas disciplinas como el diseño de juegos, la creación de arte, la programación y la prueba de calidad. Los desarrolladores de juegos utilizan herramientas y tecnologías avanzadas para crear jugabilidad envolvente, narrativas cautivadoras y mundos inmersivos que entretienen y desafían a los jugadores.",
-        dapp_development:
-            "Involucra la creación de aplicaciones descentralizadas que operan en una blockchain o red descentralizada. Estas aplicaciones utilizan contratos inteligentes para automatizar procesos e interacciones, garantizando transparencia, seguridad y descentralización. Las DAPPs generalmente incluyen una interfaz frontend para que los usuarios interactúen con las funcionalidades basadas en blockchain.",
-        bot_development:
-            "Involucra la creación de herramientas de software automatizadas que realizan tareas normalmente realizadas por humanos. Estas herramientas utilizan lenguajes de script y frameworks para optimizar procesos, mejorar la eficiencia y reducir las cargas de trabajo manuales. El desarrollo de bots tiene como objetivo automatizar tareas repetitivas en diversas plataformas, aumentando la productividad y la escalabilidad."
-    }
+
+    citation: `"Hay dos formas de construir un proyecto de software. Una es hacerlo tan simple que obviamente no hay fallos. La otra es hacerlo tan complicado que no hay fallos obvios."`,
+  },
+  we_work: {
+    sitios: 'sitios',
+    applications: 'aplicaciones',
+    automations: 'automatizaciones',
+    games: 'Juegos',
+    building: 'Creando:'
+  },
+  show_more: 'Ver Más',
+  show_less: 'Ver Menos',
+  services: {
+    web_development: `
+        Involucra la creación y mantenimiento de sitios web. Abarca varios aspectos, incluido el <strong>diseño web</strong>, 
+        el <strong>desarrollo de contenido web</strong>, la <strong>programación del lado del cliente/servidor</strong> y la 
+        <strong>configuración de seguridad de la red</strong>.<br>
+        Con un enfoque en el <em>diseño receptivo</em> y la <em>experiencia del usuario</em>, el desarrollo web garantiza que 
+        los sitios web sean <strong>funcionales</strong> y <strong>visualmente atractivos</strong>.
+          `,
+    mobile_development: `
+        Se centra en la creación de <strong>aplicaciones móviles</strong> y <strong>Progressive Web Apps (PWAs)</strong> que 
+        proporcionan experiencias de usuario <em>fluidas</em> y <em>receptivas</em>.<br>
+        Las PWAs combinan las mejores características de las aplicaciones web y móviles, ofreciendo <strong>capacidades offline</strong>, 
+        <strong>notificaciones push</strong> y <strong>tiempos de carga rápidos</strong>.<br>
+        Este proceso de desarrollo garantiza que las aplicaciones sean <strong>accesibles</strong>, <strong>confiables</strong> 
+        y <strong>atractivas</strong> en todos los dispositivos.
+          `,
+    creative_development: `
+          Combina <strong>tecnología</strong> y <strong>diseño</strong> para crear experiencias digitales innovadoras e interactivas.<br>
+          Incluye <strong>diseño de interfaz</strong>, <strong>animaciones</strong>, <strong>experiencias inmersivas</strong> y 
+          soluciones interactivas personalizadas.<br>
+          El enfoque está en la <em>creatividad</em>, <em>usabilidad</em> e <em>impacto visual</em>, asegurando que los productos digitales sean atractivos y memorables. <br>
+          Incluyen <strong>sitios web 3D interactivos</strong>, <strong>experiencias con WebGL</strong>, <strong>diseño generativo</strong> y <strong>animaciones de Motion Design</strong> que cautivan al usuario.
+         `,
+    lets_work_together: 'Trabajemos juntos en su próximo proyecto.',
+    get_in_touch: 'Ponte en contacto',
+  }
 }

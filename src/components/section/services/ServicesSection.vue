@@ -13,32 +13,21 @@ const services = [
     header: '📱 mobile-development',
     title: 'App/PWA Development',
     description: 'services.mobile_development',
-    startMinimize: true
+    startMinimize: false
   },
   {
-    header: '👾 game-development',
-    title: 'Game Development',
-    description: 'services.game_development',
-    startMinimize: true
+    header: '📱 creative-development',
+    title: 'Creative Development',
+    description: 'services.creative_development',
+    startMinimize: false
   },
-  {
-    header: '🌐 dapp-development',
-    title: 'DAPP Development',
-    description: 'services.dapp_development',
-    startMinimize: true
-  },
-  {
-    header: '🤖 bot-development',
-    title: 'Bot/Script Development',
-    description: 'services.bot_development',
-    startMinimize: true
-  }
 ]
 </script>
 
 <template>
   <div class="relative">
     <section
+    id="what_do_i_do_section"
       class="relative overflow-hidden h-screen flex items-center justify-center flex-col z-20 w-screen gap-12"
     >
       <div class="text-5xl text-black z-20 reddit-mono-extrabold uppercase">
@@ -54,7 +43,8 @@ const services = [
               :start-minimize="service.startMinimize"
             >
               <div class="touch-none reddit-mono-bold text-white">
-                {{ $t(service.description) }}
+                <div v-html="$t(service.description)">
+                </div>
               </div>
             </CommandLine>
           </div>
@@ -66,7 +56,8 @@ const services = [
               :start-minimize="service.startMinimize"
             >
               <div class="touch-none reddit-mono-bold text-white">
-                {{ $t(service.description) }}
+                <div v-html="$t(service.description)">
+                </div>
               </div>
             </CommandLine>
           </div>
