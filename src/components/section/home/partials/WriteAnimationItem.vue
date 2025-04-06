@@ -24,15 +24,11 @@ const text = computed(() => t(props.value))
 <template>
   <template v-for="(letter, letterIndex) in text.split('')">
     <template v-if="letter === '_'">
-      <br class="letter hidden" :class="[classAnimation]" :key="letterIndex" />
+      <br class="letter hidden audiowide" :class="[classAnimation]" :key="letterIndex" />
     </template>
     <template v-else>
-      <span
-        class="reddit-mono-extrabold letter hidden"
-        :class="[classAnimation]"
-        :key="letterIndex"
-      >
-        {{ letter.toUpperCase() }}
+      <span class="audiowide letter hidden" :class="[classAnimation]" :key="letterIndex">
+        {{ letter }}
       </span>
     </template>
   </template>

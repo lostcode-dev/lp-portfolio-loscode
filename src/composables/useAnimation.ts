@@ -71,6 +71,46 @@ export function useAnimation() {
         items.forEach((item) => masterTimeline.add(createLetterAnimationTimeline(item, letterDuration)))
     }
 
+    function pulseAnimation(element: string | HTMLElement, duration = 60) {
+        gsap.to(element, {
+            scale: 1.2,
+            duration: duration / 2,
+            yoyo: true,
+            repeat: -1,
+            ease: 'power2.inOut'
+        })
+    }
+
+    let mouseMoveHandler: ((event: MouseEvent) => void) | null = null
+
+    function parallaxEffect(layers = [], intensities = [], cleanup = false) {
+        if (cleanup && mouseMoveHandler) {
+            window.removeEventListener('mousemove', mouseMoveHandler)
+            mouseMoveHandler = null
+            return
+        }
+
+        mouseMoveHandler = (event: MouseEvent) => {
+            const { clientX, clientY } = event
+            const centerX = window.innerWidth / 2
+            const centerY = window.innerHeight / 2
+            const moveX = (clientX - centerX) / centerX
+            const moveY = (clientY - centerY) / centerY
+
+            layers.forEach((layer, index) => {
+                const intensity = intensities[index] || 10
+                gsap.to(layer, {
+                    x: moveX * intensity,
+                    y: moveY * intensity,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                })
+            })
+        }
+
+        window.addEventListener('mousemove', mouseMoveHandler)
+    }
+
     return {
         fadeIn,
         fadeOut,
@@ -78,6 +118,8 @@ export function useAnimation() {
         slideInFromRight,
         bounce,
         createLetterAnimationTimeline,
-        initializeCursorAndTextAnimation
+        initializeCursorAndTextAnimation,
+        pulseAnimation,
+        parallaxEffect
     }
 }

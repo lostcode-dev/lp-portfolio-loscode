@@ -21,5 +21,5 @@ onMounted(async () => {
     :value="value"
     :classAnimation="value"
   />
-  <span id="cursor" class="reddit-mono-extrabold text-white">_</span>
+  <span id="cursor" class="audiowide text-white">_</span>
 </template>

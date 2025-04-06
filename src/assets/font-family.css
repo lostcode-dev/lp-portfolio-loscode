@@ -1,92 +1,100 @@
 @import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
 .silkscreen-regular {
-    font-family: "Silkscreen", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
+  font-family: 'Silkscreen', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .silkscreen-bold {
-    font-family: "Silkscreen", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-  
+  font-family: 'Silkscreen', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 .reddit-mono-extrabold {
-    font-family: "Reddit Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-  }
+  font-family: 'Reddit Mono', monospace;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
 
-  .reddit-mono-semibold {
-    font-family: "Reddit Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-  }
+.reddit-mono-semibold {
+  font-family: 'Reddit Mono', monospace;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
 
-  .reddit-mono-bold {
-    font-family: "Reddit Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-  }
+.reddit-mono-bold {
+  font-family: 'Reddit Mono', monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
 
-  
+.audiowide {
+  font-family: 'Audiowide', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 0.05rem;
+}
+
 /* Dosis 200 */
 @font-face {
-    font-family: "Dosis";
-    src: url('./fonts/Dosis-ExtraLight.ttf');
-    font-weight: 200;
-    font-style: normal;
+  font-family: 'Dosis';
+  src: url('./fonts/Dosis-ExtraLight.ttf');
+  font-weight: 200;
+  font-style: normal;
 }
-  
+
 /* Dosis 300 */
 @font-face {
-    font-family: "Dosis";
-    src: url('./fonts/Dosis-Light.ttf');
-    font-weight: 300;
-    font-style: normal;
+  font-family: 'Dosis';
+  src: url('./fonts/Dosis-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
 }
-  
+
 /* Dosis 400 */
 @font-face {
-    font-family: "Dosis";
-    src: url('./fonts/Dosis-Regular.ttf');
-    font-weight: 400;
-    font-style: normal;
+  font-family: 'Dosis';
+  src: url('./fonts/Dosis-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
 }
-  
+
 /* Dosis 500 */
 @font-face {
-    font-family: "Dosis";
-    src: url('./fonts/Dosis-Medium.ttf');
-    font-weight: 500;
-    font-style: normal;
+  font-family: 'Dosis';
+  src: url('./fonts/Dosis-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
 }
 
 /* Dosis 600 */
 @font-face {
-    font-family: "Dosis";
-    src: url('./fonts/Dosis-SemiBold.ttf');
-    font-weight: 600;
-    font-style: normal;
+  font-family: 'Dosis';
+  src: url('./fonts/Dosis-SemiBold.ttf');
+  font-weight: 600;
+  font-style: normal;
 }
-  
+
 /* Dosis 700 */
 @font-face {
-    font-family: "Dosis";
-    src: url('./fonts/Dosis-Bold.ttf');
-    font-weight: 700;
-    font-style: normal;
+  font-family: 'Dosis';
+  src: url('./fonts/Dosis-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
 }
-  
+
 /* Dosis 800 */
 @font-face {
-    font-family: "Dosis";
-    src: url('./fonts/Dosis-ExtraBold.ttf');
-    font-weight: 800;
-    font-style: normal;
+  font-family: 'Dosis';
+  src: url('./fonts/Dosis-ExtraBold.ttf');
+  font-weight: 800;
+  font-style: normal;
 }

@@ -1,8 +1,7 @@
 <script setup>
 import StarsItemBg from './StarsItemBg.vue'
-import UniverseItemBg from './UniverseItemBg.vue';
+import UniverseItemBg from './UniverseItemBg.vue'
 import LinesItemBg from './LinesItemBg.vue'
-
 </script>
 
 <template>
@@ -10,14 +9,13 @@ import LinesItemBg from './LinesItemBg.vue'
     <div id="hey">
       <div id="layer-up"></div>
     </div>
-  
+
     <LinesItemBg />
-  
+
     <StarsItemBg />
     <UniverseItemBg />
   </div>
 </template>
-
 
 <style lang="scss" scoped>
 #container-bg {
@@ -26,7 +24,6 @@ import LinesItemBg from './LinesItemBg.vue'
   height: 100vh;
   width: 100%;
 }
-
 
 #hey {
   width: 100%;
@@ -42,14 +39,16 @@ import LinesItemBg from './LinesItemBg.vue'
 
 #layer-up {
   background: rgba(71, 255, 203, 0);
-  background: linear-gradient(to bottom,
-      rgba(71, 255, 203, 0) 0%,
-      rgba(71, 255, 203, 0) 50%,
-      rgba(71, 255, 203, 1) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(71, 255, 203, 0) 0%,
+    rgba(71, 255, 203, 0) 50%,
+    rgba(71, 255, 203, 1) 100%
+  );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#47ffcb', endColorstr='#47ffcb', GradientType=0);
   height: 300px;
   width: inherit;
-  opacity: 1;
+  opacity: 0.8;
   position: absolute;
   bottom: 0;
   left: 0;

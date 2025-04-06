@@ -9,7 +9,7 @@ export default {
   developing_solutions: 'Desenvolvendo_Soluções_Para_O_Mundo',
   innovation_pixel: 'Inovação_Em_Cada_Pixel',
   tech_transforms: 'Tecnologia_Que_Transforma_Em_Experiências',
-  design_function: 'Design_e_Funcionalidade_Unidos_Inspirando',
+  design_function: 'Design_E_Funcionalidade_Unidos_Inspirando',
 
   about: {
     greeting: "Prazer em conhecê-lo! Eu sou Daniel, sou um ",

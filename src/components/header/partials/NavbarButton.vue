@@ -44,3 +44,19 @@ const emailButton = {
   target: '_blank'
 }
 </script>
+
+<style scoped>
+.social-media__button {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.social-media__button:hover {
+  transform: scale(1.2) !important;
+  box-shadow:
+    0 0 10px rgba(255, 0, 255, 0.8),
+    0 0 20px rgba(255, 0, 255, 0.6),
+    0 0 30px rgba(255, 0, 255, 0.4);
+}
+</style>
