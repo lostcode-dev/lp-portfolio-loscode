@@ -2,7 +2,6 @@
 import CommandLine from '@/components/CommandLine.vue'
 import ImageProfile from '@/components/ImageProfile.vue'
 import SkillCardButton from './partials/SkillCardButton.vue'
-import StarsBackground from '@/components/background/StarsBackground.vue'
 </script>
 
 <template>
