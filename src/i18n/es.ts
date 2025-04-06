@@ -3,8 +3,8 @@ export default {
   who_am_i: 'Quién soy yo',
   what_do_i_do: 'Lo que hago',
   portfolio: 'Portafolio',
-  articles: 'Artículos',
   contact_us: 'Contáctanos',
+  article: 'Artículos',
 
   developing_solutions: 'Desarrollando_Soluciones_Para_Oh_Mundo',
   innovation_pixel: 'Innovación_En_Cada_Píxel',
@@ -59,6 +59,13 @@ export default {
   },
   show_more: 'Ver Más',
   show_less: 'Ver Menos',
+  articles: {
+    title: 'Artículos',
+    read_more: 'Leer más',
+    no_articles: 'No hay artículos disponibles en este momento.',
+    published_on: 'Publicado en',
+    by: 'por',
+  },
   services: {
     web_development: `
         Involucra la creación y mantenimiento de sitios web. Abarca varios aspectos, incluido el <strong>diseño web</strong>, 

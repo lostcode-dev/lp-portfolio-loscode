@@ -3,9 +3,8 @@ export default {
   who_am_i: 'Quem sou',
   what_do_i_do: 'O que faço',
   portfolio: 'Portfólio',
-  articles: 'Artigos',
   contact_us: 'Fale conosco',
-
+  article: 'Artigos',
   developing_solutions: 'Desenvolvendo_Soluções_Para_O_Mundo',
   innovation_pixel: 'Inovação_Em_Cada_Pixel',
   tech_transforms: 'Tecnologia_Que_Transforma_Em_Experiências',
@@ -85,4 +84,11 @@ export default {
   },
   lets_work_together: 'Vamos trabalhar juntos no seu próximo projeto.',
   get_in_touch: 'Entrar em contato',
+  articles: {
+    title: 'Artigos',
+    read_more: 'Leia mais',
+    no_articles: 'Nenhum artigo disponível no momento.',
+    published_on: 'Publicado em',
+    by: 'por',
+  },
 }

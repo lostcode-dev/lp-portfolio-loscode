@@ -25,7 +25,7 @@ export const navbarLinksRight = [
         class: 'navbar__link'
     },
     {
-        label: 'articles',
+        label: 'article',
         href: '#article_section',
         class: 'navbar__link'
     },

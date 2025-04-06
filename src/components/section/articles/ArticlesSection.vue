@@ -2,7 +2,9 @@
 import AboutBackground from '@/components/background/AboutBackground.vue'
 import { parse } from 'rss-to-json'
 import { ref, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
 const articles: any = ref([])
 
 const fetchArticles = async () => {
@@ -25,15 +27,15 @@ onMounted(() => {
 
 <template>
   <div class="relative">
-    <section class="relative z-20">
+    <section id="article_section" class="relative z-20">
       <div class="bg-black py-24 sm:py-16 rounded-lg">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto lg:mx-0 text-center">
             <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl uppercase">
-              From the blog
+              {{ t('articles.title') }}
             </h2>
             <p class="mt-2 text-lg leading-8 text-white">
-              Learn how to grow your business with our expert advice.
+              {{ t('articles.no_articles') }}
             </p>
           </div>
           <div
@@ -54,6 +56,7 @@ onMounted(() => {
                   :datetime="new Date(article.published).toISOString()"
                   class="block text-xs text-gray-500"
                 >
+                  {{ t('articles.published_on') }}
                   {{ new Date(article.published).toLocaleDateString() }}
                 </time>
                 <a :href="article.link" target="_blank">

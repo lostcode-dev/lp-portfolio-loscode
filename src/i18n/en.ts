@@ -1,12 +1,11 @@
-import { get } from "@vueuse/core";
 
 export default {
     home: 'Home',
     who_am_i: 'Who am I',
     what_do_i_do: 'What I do',
     portfolio: 'Portfolio',
-    articles: 'Articles',
     contact_us: 'Contact us',
+    article: 'Articles',
 
     developing_solutions: 'Developing_Solutions_For_The_World',
     innovation_pixel: 'Innovation_In_Each_Pixel',
@@ -61,6 +60,14 @@ export default {
     },
     show_more: 'Show More',
     show_less: 'Show Less',
+
+    articles: {
+        title: 'Articles',
+        read_more: 'Read more',
+        no_articles: 'No articles available at the moment.',
+        published_on: 'Published on',
+        by: 'by',
+    },
 
     services: {
         web_development: `
