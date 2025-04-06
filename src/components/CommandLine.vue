@@ -48,9 +48,7 @@ const isMinimize = ref(props.startMinimize)
           'command-container--maximize': !isMinimize
         }"
       >
-        <div
-          class="border-b border-b-white p-2 flex items-center select-none silkscreen-regular text-white"
-        >
+        <div class="border-b border-b-white p-2 flex items-center select-none audiowide text-white">
           <p>{{ title }}</p>
           <div class="flex gap-2 text-base-300 ml-auto" style="touch-action: none">
             <MinimizeIcon @click="isMinimize = true" />
@@ -68,7 +66,9 @@ const isMinimize = ref(props.startMinimize)
 
 <style scoped>
 .command-container {
-  transition: max-height 1.5s;
+  transition:
+    max-height 1.5s,
+    box-shadow 0.5s ease-in-out;
 }
 
 .command-container--minimize {
@@ -77,6 +77,30 @@ const isMinimize = ref(props.startMinimize)
 
 .command-container--maximize {
   max-height: 600px;
+}
+
+.command-container:hover {
+  box-shadow:
+    0 0 10px 2px rgba(255, 103, 0, 0.7),
+    0 0 20px 4px rgba(255, 103, 0, 0.5);
+}
+
+@keyframes neon-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 10px 2px rgba(255, 103, 0, 0.7),
+      0 0 20px 4px rgba(255, 103, 0, 0.5);
+  }
+  50% {
+    box-shadow:
+      0 0 15px 3px rgba(255, 103, 0, 0.8),
+      0 0 30px 6px rgba(255, 103, 0, 0.6);
+  }
+}
+
+.command-container:hover {
+  animation: neon-pulse 1.5s infinite alternate;
 }
 
 .opacity-enter-active,

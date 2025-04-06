@@ -76,29 +76,27 @@ onMounted(() => {
   >
     <div class="bg-black/70 py-20" style="box-shadow: rgba(0, 0, 0, 0.5) 0px 15px 10px">
       <section class="!min-h-80">
-        <span class="text-container animated-text text-8xl text-white">
-          <template v-for="letter in we_make" :key="letter">
-            <span class="reddit-mono-extrabold we_make letter hidden">{{ letter }}</span>
-          </template>
-
-          <br class="we_make letter hidden" />
-
-          <template v-for="(word, index) in we_make_options" :key="index">
-            <span
-              class="reddit-mono-extrabold we_make_options letter hidden mr-3"
-              :class="[options[index]]"
-              >{{ getEmoji(index) }}
-            </span>
-            <template v-for="letter in word" :key="letter">
-              <span
-                class="reddit-mono-extrabold we_make_options letter hidden"
-                :class="[options[index]]"
-                >{{ letter }}</span
-              >
+        <span class="animated-text sm:text-6xl md:text-7xl xl:text-8xl text-white grid gap-8">
+          <div>
+            <template v-for="letter in we_make" :key="letter">
+              <span class="audiowide we_make letter hidden">{{ letter }}</span>
             </template>
-            <br class="we_make_options letter hidden" />
-          </template>
-          <span id="cursor" class="reddit-mono-extrabold text-8xl text-white">_</span>
+          </div>
+
+          <div>
+            <template v-for="(word, index) in we_make_options" :key="index">
+              <span class="audiowide we_make_options letter hidden mr-3" :class="[options[index]]"
+                >{{ getEmoji(index) }}
+              </span>
+              <template v-for="letter in word" :key="letter">
+                <span class="audiowide we_make_options letter hidden" :class="[options[index]]">{{
+                  letter
+                }}</span>
+              </template>
+              <br class="we_make_options letter hidden" />
+            </template>
+            <span id="cursor" class="audiowide text-white">_</span>
+          </div>
         </span>
       </section>
     </div>

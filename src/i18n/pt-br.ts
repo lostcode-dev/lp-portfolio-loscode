@@ -47,7 +47,8 @@ export default {
       exercising: "🏋🏻‍♂️ Exercício",
     },
 
-    citation: `"Existem duas maneiras de construir um projeto de software. Uma é fazê-lo tão simples que obviamente não há falhas. A outra é fazê-lo tão complicado que não existem falhas óbvias."`,
+    citation: `"Programar é como compor música: pequenos erros causam ruído, mas quando tudo está certo... você ouve a harmonia."`,
+    citation_author: "👨🏻‍💻 Dev Desconhecido",
   },
   we_work: {
     sites: 'Sites',

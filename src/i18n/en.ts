@@ -49,7 +49,8 @@ export default {
             exercising: "🏋🏻‍♂️ Exercising",
         },
 
-        citation: `"There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies and the other way is to make it so complicated that there are no obvious deficiencies." - C.A.R. HOARE`,
+        citation: `"Programming is like composing music: small mistakes make noise, but when everything is right... you hear the harmony."`,
+        citation_author: "👨🏻‍💻 Unknown Dev",
     },
     we_work: {
         sites: 'Sites',

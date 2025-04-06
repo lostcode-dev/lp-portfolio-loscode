@@ -18,11 +18,11 @@ import StarsBackground from '@/components/background/StarsBackground.vue'
       <section id="lets_work" class="text-white z-20 w-full">
         <CommandLine id="collaboration" title="collaboration" class="mx-auto w-5/6">
           <div class="flex">
-            <ImageProfile class="p-6 max-w-56" />
-            <div class="p-4">
-              <p class="text-5xl">{{ $t('lets_work_together') }}</p>
-              <a href="#talk_with_us_section">
-                <SkillCardButton class="mt-6" icon="arrow-left">
+            <ImageProfile class="p-6 max-w-56" src="/img/perfil.png" />
+            <div class="p-4 grid gap-2">
+              <p class="text-5xl audiowide">{{ $t('lets_work_together') }}</p>
+              <a href="#talk_with_us_section ">
+                <SkillCardButton icon="arrow-left">
                   {{ $t('get_in_touch') }}
                 </SkillCardButton>
               </a>

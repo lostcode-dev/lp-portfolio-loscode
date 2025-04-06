@@ -1,4 +1,7 @@
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export function useAnimation() {
     function fadeIn(element: string | HTMLElement, duration = 0.5) {
@@ -111,6 +114,26 @@ export function useAnimation() {
         window.addEventListener('mousemove', mouseMoveHandler)
     }
 
+    function createScrollAnimation(
+        element: string | HTMLElement,
+        fromProps: gsap.TweenVars,
+        toProps: gsap.TweenVars,
+        trigger: string | HTMLElement,
+        start: string,
+        duration: number
+    ): void {
+        gsap.fromTo(element, fromProps, {
+            ...toProps,
+            duration,
+            scrollTrigger: {
+                trigger,
+                start,
+                toggleActions: 'play none none none',
+                once: true
+            }
+        })
+    }
+
     return {
         fadeIn,
         fadeOut,
@@ -120,6 +143,7 @@ export function useAnimation() {
         createLetterAnimationTimeline,
         initializeCursorAndTextAnimation,
         pulseAnimation,
-        parallaxEffect
+        parallaxEffect,
+        createScrollAnimation
     }
 }

@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import AboutBackground from '@/components/background/AboutBackground.vue'
 import CommandLine from '@/components/CommandLine.vue'
+import { onMounted } from 'vue'
+import { useAnimation } from '@/composables/useAnimation'
+
+const { createScrollAnimation } = useAnimation()
 
 const services = [
   {
@@ -20,19 +24,43 @@ const services = [
     title: 'Creative Development',
     description: 'services.creative_development',
     startMinimize: false
-  },
+  }
 ]
+
+onMounted(() => {
+  createScrollAnimation(
+    '.command-line-0',
+    { x: '-40%', opacity: 0 },
+    { x: '0%', opacity: 1 },
+    '#what_do_i_do_section',
+    'top 80%',
+    1
+  )
+  createScrollAnimation(
+    '.command-line-1',
+    { x: '50%', opacity: 0 },
+    { x: '0%', opacity: 1 },
+    '#what_do_i_do_section',
+    'top 70%',
+    1.2
+  )
+  createScrollAnimation(
+    '.command-line-2',
+    { x: '-40%', opacity: 0 },
+    { x: '0%', opacity: 1 },
+    '#what_do_i_do_section',
+    'top 60%',
+    1.4
+  )
+})
 </script>
 
 <template>
   <div class="relative">
     <section
-    id="what_do_i_do_section"
+      id="what_do_i_do_section"
       class="relative overflow-hidden h-screen flex items-center justify-center flex-col z-20 w-screen gap-12"
     >
-      <div class="text-5xl text-black z-20 reddit-mono-extrabold uppercase">
-        {{ $t('what_do_i_do') }}
-      </div>
       <div class="container relative flex flex-col justify-between mb-20">
         <div class="w-full grid gap-8">
           <div class="flex flex-col w-full sm:flex-row gap-8">
@@ -41,10 +69,10 @@ const services = [
               :key="index"
               :title="service.header"
               :start-minimize="service.startMinimize"
+              :class="`command-line-${index}`"
             >
               <div class="touch-none reddit-mono-bold text-white">
-                <div v-html="$t(service.description)">
-                </div>
+                <div v-html="$t(service.description)"></div>
               </div>
             </CommandLine>
           </div>
@@ -54,10 +82,10 @@ const services = [
               v-for="(service, index) in services.slice(2, 5)"
               :key="index"
               :start-minimize="service.startMinimize"
+              :class="`command-line-${index + 2}`"
             >
               <div class="touch-none reddit-mono-bold text-white">
-                <div v-html="$t(service.description)">
-                </div>
+                <div v-html="$t(service.description)"></div>
               </div>
             </CommandLine>
           </div>

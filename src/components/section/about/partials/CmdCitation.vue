@@ -13,6 +13,8 @@ import CommandLine from '@/components/CommandLine.vue'
     <p class="touch-none reddit-mono-bold">
       {{ $t('about.citation') }}
     </p>
-    <p class="touch-none reddit-mono-bold">👨🏻‍💻 C.A.R. HOAR</p>
+    <p class="touch-none reddit-mono-bold">
+      {{ $t('about.citation_author') }}
+    </p>
   </CommandLine>
 </template>
