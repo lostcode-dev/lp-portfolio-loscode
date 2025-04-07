@@ -91,4 +91,11 @@ export default {
     published_on: 'Publicado em',
     by: 'por',
   },
+  seo: {
+    home: {
+      title: 'LP Portfólio LostCode',
+      description: 'Bem-vindo ao LP Portfolio LostCode. Descubra nossos serviços, projetos e artigos.',
+      keywords: 'portfolio, desenvolvimento, projetos, artigos, serviços, tecnologia',
+    },
+  },
 }

@@ -91,5 +91,12 @@ export default {
          `,
     lets_work_together: 'Trabajemos juntos en su próximo proyecto.',
     get_in_touch: 'Ponte en contacto',
-  }
+  },
+  seo: {
+    home: {
+      title: 'LP Portfolio LostCode',
+      description: 'Bienvenido a LP Portfolio LostCode. Descubre nuestros servicios, proyectos y artículos.',
+      keywords: 'portafolio, desarrollo, proyectos, artículos, servicios, tecnología',
+    },
+  },
 }

@@ -1,4 +1,3 @@
-
 export default {
     home: 'Home',
     who_am_i: 'Who am I',
@@ -93,4 +92,12 @@ export default {
     },
     lets_work_together: 'Let’s work together on your next project.',
     get_in_touch: 'Get in touch',
+
+    seo: {
+        home: {
+            title: 'LP Portfolio LostCode',
+            description: 'Welcome to LP Portfolio LostCode. Discover our services, projects, and articles.',
+            keywords: 'portfolio, development, projects, articles, services, technology',
+        },
+    },
 }

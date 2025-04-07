@@ -1,14 +1,20 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en" class="scroll-smooth" id="html-root">
   <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
-    <link href="./src/assets/output.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./src/assets/output.css" rel="stylesheet" />
   </head>
   <body class="scroll-smooth relative">
     <div id="app" class="scroll-smooth"></div>
     <script type="module" src="/src/main.ts"></script>
+    <script>
+      const supportedLanguages = ['en', 'es', 'pt', 'pt-BR']
+      const browserLang = navigator.language || navigator.userLanguage
+      const defaultLang = 'en'
+      const lang = supportedLanguages.includes(browserLang) ? browserLang : defaultLang
+      document.getElementById('html-root').setAttribute('lang', lang)
+    </script>
   </body>
 </html>

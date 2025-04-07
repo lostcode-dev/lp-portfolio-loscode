@@ -30,7 +30,9 @@ import ParallaxBackground from '@/components/background/ParallaxBackground.vue'
         <LetsWorkSection />
         <ProjectsSection />
 
+        <LetsWorkSection />
         <ArticlesSection />
+
         <ContactUsSection />
         <TheFooter />
       </div>
