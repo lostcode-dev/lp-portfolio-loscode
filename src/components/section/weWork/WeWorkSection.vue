@@ -69,23 +69,21 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    ref="weWorkSection"
-    class="relative z-[60]"
-    style="box-shadow: 0 -15px 10px rgba(0, 0, 0, 0.5)"
-  >
-    <div class="bg-black/70 py-20" style="box-shadow: rgba(0, 0, 0, 0.5) 0px 15px 10px">
-      <section class="!min-h-80">
-        <span class="animated-text sm:text-6xl md:text-7xl xl:text-8xl text-white grid gap-8">
+  <div ref="weWorkSection" class="relative z-[60]">
+    <div class="py-16 sm:py-20">
+      <section class="!lg:min-h-[70vh] !min-h-40 sm:!min-h-60">
+        <span
+          class="animated-text text-4xl sm:text-6xl md:text-7xl xl:text-8xl text-white grid gap-6 sm:gap-8"
+        >
           <div>
             <template v-for="letter in we_make" :key="letter">
               <span class="audiowide we_make letter hidden">{{ letter }}</span>
             </template>
           </div>
 
-          <div>
+          <div class="text-nowrap">
             <template v-for="(word, index) in we_make_options" :key="index">
-              <span class="audiowide we_make_options letter hidden mr-3" :class="[options[index]]"
+              <span class="we_make_options letter hidden mr-2 sm:mr-3" :class="[options[index]]"
                 >{{ getEmoji(index) }}
               </span>
               <template v-for="letter in word" :key="letter">

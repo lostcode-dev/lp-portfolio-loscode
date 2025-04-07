@@ -5,22 +5,15 @@ import SkillCardButton from './partials/SkillCardButton.vue'
 </script>
 
 <template>
-  <div
-    ref="letsWorkSection"
-    class="relative z-[60]"
-    style="box-shadow: 0 -15px 10px rgba(0, 0, 0, 0.5)"
-  >
-    <div
-      class="bg-black/60 py-20 relative overflow-hidden flex items-center flex-col panel w-screen"
-      style="box-shadow: rgba(0, 0, 0, 0.5) 0px 15px 10px"
-    >
+  <div ref="letsWorkSection" class="relative z-[60] shadow-lg">
+    <div class="py-20 relative overflow-hidden flex items-center flex-col panel w-screen">
       <section id="lets_work" class="text-white z-20 w-full">
-        <CommandLine id="collaboration" title="collaboration" class="mx-auto w-5/6">
-          <div class="flex">
+        <CommandLine id="collaboration" title="collaboration" class="mx-auto sm:w-5/6">
+          <div class="flex flex-col sm:flex-row items-center">
             <ImageProfile class="p-6 max-w-56" src="/img/perfil.png" />
-            <div class="p-4 grid gap-2">
-              <p class="text-5xl audiowide">{{ $t('lets_work_together') }}</p>
-              <a href="#talk_with_us_section ">
+            <div class="p-4 grid gap-2 text-center sm:text-left">
+              <p class="text-3xl sm:text-5xl audiowide">{{ $t('lets_work_together') }}</p>
+              <a href="#talk_with_us_section">
                 <SkillCardButton icon="arrow-left">
                   {{ $t('get_in_touch') }}
                 </SkillCardButton>

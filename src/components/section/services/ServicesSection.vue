@@ -59,11 +59,11 @@ onMounted(() => {
   <div class="relative">
     <section
       id="what_do_i_do_section"
-      class="relative overflow-hidden h-screen flex items-center justify-center flex-col z-20 w-screen gap-12"
+      class="relative overflow-hidden min-h-screen flex items-center justify-center flex-col z-20 w-full gap-12 px-4 sm:px-8"
     >
       <div class="container relative flex flex-col justify-between mb-20">
         <div class="w-full grid gap-8">
-          <div class="flex flex-col w-full sm:flex-row gap-8">
+          <div class="flex flex-col w-full sm:flex-row gap-8 flex-wrap">
             <CommandLine
               v-for="(service, index) in services.slice(0, 2)"
               :key="index"
@@ -71,12 +71,12 @@ onMounted(() => {
               :start-minimize="service.startMinimize"
               :class="`command-line-${index}`"
             >
-              <div class="touch-none reddit-mono-bold text-white">
+              <div class="touch-none reddit-mono-bold text-white text-sm sm:text-base">
                 <div v-html="$t(service.description)"></div>
               </div>
             </CommandLine>
           </div>
-          <div class="flex flex-col w-full sm:flex-row gap-8">
+          <div class="flex flex-col w-full sm:flex-row gap-8 flex-wrap">
             <CommandLine
               :title="service.header"
               v-for="(service, index) in services.slice(2, 5)"
@@ -84,7 +84,7 @@ onMounted(() => {
               :start-minimize="service.startMinimize"
               :class="`command-line-${index + 2}`"
             >
-              <div class="touch-none reddit-mono-bold text-white">
+              <div class="touch-none reddit-mono-bold text-white text-sm sm:text-base">
                 <div v-html="$t(service.description)"></div>
               </div>
             </CommandLine>

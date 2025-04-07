@@ -6,12 +6,12 @@ import SkillCardButton from '@/components/section/letsWork/partials/SkillCardBut
 
 <template>
   <div
-    class="bg-gradient-to-r from-purple-900 via-black to-blue-900 py-4 relative overflow-hidden flex items-center justify-center flex-col panel h-screen w-screen"
+    class="bg-gradient-to-r from-purple-900 via-black to-blue-900 py-4 relative overflow-hidden flex items-center justify-center flex-col panel h-screen w-screen sm:h-auto sm:w-full"
   >
     <MeshGradient />
-    <section id="talk_with_us_section" class="text-pink-300 w-full">
-      <CommandLine id="write-me" title="write-me" class="mx-auto w-5/6 shadow-neon-pink">
-        <div class="p-2">
+    <section id="talk_with_us_section" class="text-pink-300 w-full px-4 sm:px-8 lg:px-16">
+      <CommandLine id="write-me" title="write-me" class="mx-auto w-full max-w-3xl shadow-neon-pink">
+        <div class="p-2 sm:p-4">
           <form name="contact-form" action="" method="post" class="flex flex-col gap-4">
             <input type="hidden" name="form-name" value="contact-form" />
             <input type="hidden" name="subject" value="New contact from website" />
@@ -27,7 +27,7 @@ import SkillCardButton from '@/components/section/letsWork/partials/SkillCardBut
                 <input
                   id="name"
                   type="text"
-                  class="input rounded border border-cyan-400 bg-black/80 font-headings font-normal focus:border-pink-500 focus:outline-none sm:h-12 sm:px-2 sm:text-lg text-white"
+                  class="input rounded border border-cyan-400 bg-black/80 font-headings font-normal focus:border-pink-500 focus:outline-none h-10 px-2 text-sm sm:h-12 sm:px-4 sm:text-lg text-white"
                   name="name"
                 />
               </div>
@@ -43,7 +43,7 @@ import SkillCardButton from '@/components/section/letsWork/partials/SkillCardBut
                 ><input
                   id="email"
                   type="email"
-                  class="input rounded border border-cyan-400 bg-black/80 font-headings font-normal text-white focus:border-pink-500 focus:outline-none sm:h-12 sm:px-2 sm:text-lg"
+                  class="input rounded border border-cyan-400 bg-black/80 font-headings font-normal text-white focus:border-pink-500 focus:outline-none h-10 px-2 text-sm sm:h-12 sm:px-4 sm:text-lg"
                   name="email"
                 />
               </div>
@@ -58,7 +58,7 @@ import SkillCardButton from '@/components/section/letsWork/partials/SkillCardBut
                   ></label
                 ><textarea
                   id="message"
-                  class="textarea rounded border border-cyan-400 bg-black/80 py-3 font-headings text-base font-normal text-white focus:border-pink-500 focus:outline-none sm:p-2 sm:text-lg"
+                  class="textarea rounded border border-cyan-400 bg-black/80 py-2 font-headings text-sm font-normal text-white focus:border-pink-500 focus:outline-none sm:py-3 sm:px-4 sm:text-lg"
                   rows="4"
                   name="message"
                 ></textarea>
@@ -74,16 +74,16 @@ import SkillCardButton from '@/components/section/letsWork/partials/SkillCardBut
                   class="checkbox rounded border-base-300 bg-base-100 checked:checkbox-primary focus:border-primary focus:outline-none"
                   value="true"
                 />
-                <span class="mt-1 block w-full text-white">
+                <span class="mt-1 block w-full text-white text-sm sm:text-base">
                   <p>I agree with the terms of the Privacy Policy</p>
                 </span>
               </label>
             </div>
 
-            <div class="ml-7">
+            <div class="ml-7 sm:ml-8">
               <SkillCardButton
                 icon="message"
-                class="bg-gradient-to-r from-pink-500 to-purple-500 text-white"
+                class="bg-gradient-to-r from-pink-500 to-purple-500 text-white text-sm sm:text-base"
               >
                 <span class="overflow-hidden"> Submit message </span>
               </SkillCardButton>

@@ -61,18 +61,18 @@ onMounted(() => {
 
 <template>
   <div class="relative">
-    <section id="article_section" class="relative z-20">
-      <div class="bg-gradient-to-r bg-black py-24 sm:py-16 rounded-lg shadow-lg my-20">
+    <section id="article_section" class="relative z-20 px-4 sm:px-8 lg:px-16">
+      <div class="bg-gradient-to-r bg-black py-10 sm:py-16 rounded-lg shadow-lg my-10 sm:my-20">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto lg:mx-0 text-center">
             <h2
-              class="text-4xl audiowide font-extrabold tracking-widest text-white sm:text-5xl uppercase neon-text"
+              class="text-3xl sm:text-4xl audiowide font-extrabold tracking-widest text-white md:text-5xl uppercase neon-text"
             >
               {{ t('articles.title') }}
             </h2>
           </div>
           <div
-            class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:mt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+            class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-8 md:gap-y-16 sm:mt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
           >
             <a v-for="article in articles" :key="article.id" :href="article.link" target="_blank">
               <article
