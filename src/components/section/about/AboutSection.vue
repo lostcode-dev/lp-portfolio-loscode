@@ -81,19 +81,19 @@ const key = computed(() => {
       class="text-white relative z-20 h-full flex items-center w-screen"
     >
       <div
-        class="flex w-full lg:w-auto h-full lg:h-auto gap-4 sm:gap-5 my-12 sm:my-16 flex-col justify-center items-center"
+        class="flex w-full lg:w-auto h-full lg:h-auto gap-4 sm:gap-5 my-12 sm:my-16 flex-col md:flex-row justify-center items-center"
       >
         <CmdAbout
           :key="`about-block-${key}`"
-          class="cmd-left sm:absolute w-80 sm:w-96 lg:flex lg:w-2/5 top-[5%] sm:top-[20%] lg:top-auto lg:relative"
+          class="cmd-left sm:absolute w-80 sm:w-96 lg:flex lg:w-2/5 top-[5%] sm:top-[20%] lg:top-auto lg:relative md:order-0"
         />
         <ImageProfile
-          class="image-center sm:absolute w-1/2 sm:w-60 lg:w-1/5 top-[35%] sm:top-[40%] left-[25%] sm:left-[30%] lg:top-auto lg:relative lg:left-auto order-first"
+          class="image-center sm:absolute w-1/2 sm:w-60 lg:w-1/5 top-[35%] sm:top-[40%] left-[25%] sm:left-[30%] lg:top-auto lg:relative lg:left-auto order-first md:order-1"
           src="/img/perfil-2.png"
           is-animated
         />
 
-        <div class="lg:w-2/5 flex flex-col justify-center items-center gap-8">
+        <div class="lg:w-2/5 flex md:block flex-col justify-center items-center gap-8 order-2">
           <CmdWork
             :key="`work-block-${key}`"
             class="cmd-work sm:absolute w-72 sm:w-80 lg:flex lg:w-auto top-[12.5%] sm:top-[18%] right-[10%] sm:right-4 lg:top-auto lg:relative lg:right-auto"
