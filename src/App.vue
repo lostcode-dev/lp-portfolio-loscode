@@ -7,7 +7,7 @@ import { useSeoMeta } from '@unhead/vue'
 const { t } = useI18n()
 
 const supportedLanguages = ['en', 'es', 'pt', 'pt-BR']
-const browserLang = navigator.language || navigator.userLanguage
+const browserLang = navigator.language || (navigator as any)?.userLanguage
 const defaultLang = 'en'
 const lang = supportedLanguages.includes(browserLang) ? browserLang : defaultLang
 
