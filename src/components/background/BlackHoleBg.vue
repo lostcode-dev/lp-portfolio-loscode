@@ -53,7 +53,7 @@ let startDisc: Disc | null = null
 let endDisc: Disc | null = null
 let particleArea: ParticleArea | null = null
 let linesCanvas: OffscreenCanvas | null = null
-let linesCtx: CanvasRenderingContext2D | null = null
+let linesCtx: CanvasRenderingContext2D | OffscreenCanvasRenderingContext2D | null = null
 
 const setSize = () => {
   const rect = canvasRef.value?.getBoundingClientRect()
@@ -150,11 +150,14 @@ const setLines = () => {
   if (!linesCtx) return
 
   lines.forEach((line) => {
+    if (!linesCtx || !clip) return
     linesCtx.save()
     let lineIsIn = false
     line.forEach((p1, j) => {
       if (j === 0) return
       const p0 = line[j - 1]
+
+      if (!linesCtx || !clip) return
 
       if (
         !lineIsIn &&
@@ -271,6 +274,7 @@ const drawDiscs = () => {
 
   discs.forEach((disc, i) => {
     if (i % 5 !== 0) return
+    if (!ctx || !clip) return
     if (disc.w < clip.disc.w - 5) {
       ctx.save()
       ctx.clip(clip.path)
@@ -295,6 +299,7 @@ const drawParticles = () => {
   ctx.save()
   ctx.clip(clip.path)
   particles.forEach((particle) => {
+    if (!ctx || !clip) return
     ctx.fillStyle = particle.c
     ctx.beginPath()
     ctx.rect(particle.x, particle.y, particle.r, particle.r)
@@ -313,6 +318,7 @@ const moveDiscs = () => {
 
 const moveParticles = () => {
   particles.forEach((particle) => {
+    if (!particleArea) return
     particle.p = 1 - particle.y / particleArea.h
     particle.x = particle.sx + particle.dx * particle.p
     particle.y -= particle.vy
@@ -323,7 +329,7 @@ const moveParticles = () => {
 }
 
 const tick = () => {
-  if (!ctx || !canvasRef.value) return
+  if (!ctx || !canvasRef.value || !render) return
   ctx.clearRect(0, 0, canvasRef.value.width, canvasRef.value.height)
   ctx.save()
   ctx.scale(render.dpi, render.dpi)
