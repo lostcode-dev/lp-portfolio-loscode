@@ -91,12 +91,14 @@ export default {
         Include <strong>interactive 3D websites</strong>, <strong>WebGL experiences</strong>, <strong>generative design</strong>, and <strong>dynamic Motion Design animations</strong> that captivate users.`,
     },
     lets_work_together: 'Let’s work together on your next project.',
+    transform_your_project: 'Transform your project into a digital experience.',
+    lets_develop_your: "Let's develop your next big idea.",
     get_in_touch: 'Get in touch',
 
     seo: {
         home: {
-            title: 'LP Portfolio LostCode',
-            description: 'Welcome to LP Portfolio LostCode. Discover our services, projects, and articles.',
+            title: 'lostCode',
+            description: 'Explore the portfolio: innovative solutions in technology, web development, creative projects, and technical articles to turn your ideas into reality.',
             keywords: 'portfolio, development, projects, articles, services, technology',
         },
     },

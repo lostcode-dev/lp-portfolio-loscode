@@ -2,6 +2,16 @@
 import CommandLine from '@/components/CommandLine.vue'
 import ImageProfile from '@/components/ImageProfile.vue'
 import SkillCardButton from './partials/SkillCardButton.vue'
+
+defineProps({
+  title: {
+    type: String
+  },
+  src: {
+    type: String,
+    default: '/img/perfil.png'
+  }
+})
 </script>
 
 <template>
@@ -10,9 +20,9 @@ import SkillCardButton from './partials/SkillCardButton.vue'
       <section id="lets_work" class="text-white z-20 w-full">
         <CommandLine id="collaboration" title="collaboration" class="mx-auto sm:w-5/6">
           <div class="flex flex-col sm:flex-row items-center">
-            <ImageProfile class="p-6 max-w-56" src="/img/perfil.png" />
+            <ImageProfile class="p-6 max-w-56" :src="src" />
             <div class="p-4 grid gap-2 text-center sm:text-left">
-              <p class="text-3xl sm:text-5xl audiowide">{{ $t('lets_work_together') }}</p>
+              <p class="text-3xl sm:text-5xl audiowide">{{ title ?? $t('lets_work_together') }}</p>
               <a href="#talk_with_us_section">
                 <SkillCardButton icon="arrow-left">
                   {{ $t('get_in_touch') }}

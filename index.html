@@ -13,7 +13,7 @@
       const supportedLanguages = ['en', 'es', 'pt', 'pt-BR']
       const browserLang = navigator.language || navigator.userLanguage
       const defaultLang = 'en'
-      const lang = supportedLanguages.includes(browserLang) ? browserLang : defaultLang
+      const lang = 'supportedLanguages'.includes(browserLang) ? browserLang : defaultLang
       document.getElementById('html-root').setAttribute('lang', lang)
     </script>
   </body>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HeaderContent from '@/components/header/TheHeader.vue'
+import TheHeader from '@/components/header/TheHeader.vue'
 import HomeSection from '@/components/section/home/HomeSection.vue'
 import AboutSection from '@/components/section/about/AboutSection.vue'
 import LetsWorkSection from '@/components/section/letsWork/LetsWorkSection.vue'
@@ -10,12 +10,16 @@ import ServicesSection from '@/components/section/services/ServicesSection.vue'
 import ProjectsSection from '@/components/section/projects/ProjectsSection.vue'
 import TheFooter from '@/components/footer/TheFooter.vue'
 import ParallaxBackground from '@/components/background/ParallaxBackground.vue'
+import BlackHoleBg from '@/components/background/BlackHoleBg.vue'
+
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 </script>
 
 <template>
   <div class="h-full scroll-smooth">
     <ParallaxBackground />
-    <HeaderContent class="relative z-10" />
+    <TheHeader class="relative z-10" />
 
     <main class="relative z-10 overflow-x-hidden">
       <HomeSection />
@@ -27,10 +31,10 @@ import ParallaxBackground from '@/components/background/ParallaxBackground.vue'
       <ServicesSection />
 
       <div>
-        <LetsWorkSection />
+        <LetsWorkSection :title="t('lets_work_together')" />
         <ProjectsSection />
 
-        <LetsWorkSection />
+        <LetsWorkSection :title="t('transform_your_project')" src="/img/perfil.png" />
         <ArticlesSection />
 
         <ContactUsSection />

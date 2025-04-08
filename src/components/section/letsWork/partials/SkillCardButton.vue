@@ -21,7 +21,7 @@ const icons = {
 
 <style scoped>
 .button {
-  height: 30px;
+  min-height: 30px;
   display: flex;
   align-items: center;
   justify-content: flex-start;

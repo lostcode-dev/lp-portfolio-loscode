@@ -83,6 +83,8 @@ export default {
          `
   },
   lets_work_together: 'Vamos trabalhar juntos no seu próximo projeto.',
+  transform_your_project: 'Transforme seu projeto em uma experiência.',
+  lets_develop_your: 'Vamos desenvolver sua próxima grande ideia.',
   get_in_touch: 'Entrar em contato',
   articles: {
     title: 'Artigos',
@@ -93,8 +95,8 @@ export default {
   },
   seo: {
     home: {
-      title: 'LP Portfólio LostCode',
-      description: 'Bem-vindo ao LP Portfolio LostCode. Descubra nossos serviços, projetos e artigos.',
+      title: 'lostCode',
+      description: 'Explore o portfólio: soluções inovadoras em tecnologia, desenvolvimento web, projetos criativos e artigos técnicos para transformar suas ideias em realidade.',
       keywords: 'portfolio, desenvolvimento, projetos, artigos, serviços, tecnologia',
     },
   },
