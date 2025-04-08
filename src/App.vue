@@ -3,6 +3,7 @@ import { RouterView } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { useHead } from '@unhead/vue'
 import { useSeoMeta } from '@unhead/vue'
+import { Analytics } from '@vercel/analytics/vue'
 
 const { t } = useI18n()
 
@@ -37,5 +38,6 @@ useSeoMeta({
 </script>
 
 <template>
+  <Analytics />
   <RouterView />
 </template>
