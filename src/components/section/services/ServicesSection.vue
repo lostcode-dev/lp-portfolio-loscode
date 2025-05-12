@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AboutBackground from '@/components/background/AboutBackground.vue'
 import CommandLine from '@/components/CommandLine.vue'
-import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ScrollingBanner from '@/components/ScrollingBanner.vue'
@@ -10,10 +10,9 @@ gsap.registerPlugin(ScrollTrigger)
 
 const sectionRef = ref(null)
 const titleRef = ref(null)
-const servicesRef = ref([])
-let ctx = null
+const servicesRef = ref<(HTMLElement | null)[]>([])
+let ctx: gsap.Context | null = null
 
-// Reordenar os serviços para melhor distribuição visual
 const services = [
   {
     header: '🖥️ web-development',
@@ -62,137 +61,141 @@ const services = [
   }
 ]
 
+const bannerText = 'Serviços ✦ Services ✦ Servicios ✦ Services ✦ Dienstleistungen ✦ '
+
 onMounted(() => {
-  ctx = gsap.context(() => {
-    if (titleRef.value) {
-      gsap.fromTo(
-        titleRef.value,
-        { opacity: 0, y: -30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: titleRef.value,
-            start: 'top bottom-=100',
-            end: 'bottom center',
-            toggleActions: 'play none none none',
-            once: true,
-            onEnter: () => {
-              const glitchLoop = () => {
-                if (!titleRef.value) return
+  if (sectionRef.value) {
+    ctx = gsap.context(() => {
+      if (titleRef.value) {
+        gsap.fromTo(
+          titleRef.value,
+          { opacity: 0, y: -30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: titleRef.value,
+              start: 'top bottom-=100',
+              end: 'bottom center',
+              toggleActions: 'play none none none',
+              once: true,
+              onEnter: () => {
+                const glitchLoop = () => {
+                  if (!titleRef.value) return
 
-                const duration = 0.1
-                const delay = Math.random() * 5 + 3
+                  const duration = 0.1
+                  const delay = Math.random() * 5 + 3
 
-                gsap.to(titleRef.value, {
-                  skewX: 20,
-                  textShadow: '5px 0 #ff7a00, -5px 0 #fe848f',
-                  ease: 'power2.inOut',
-                  duration: duration,
-                  onComplete: () => {
-                    gsap.to(titleRef.value, {
-                      skewX: 0,
-                      textShadow: '0 0 10px rgba(255, 122, 0, 0.8)',
-                      duration: duration,
-                      onComplete: () => {
-                        setTimeout(glitchLoop, delay * 1000)
-                      }
-                    })
-                  }
-                })
+                  gsap.to(titleRef.value, {
+                    skewX: 20,
+                    textShadow: '5px 0 #ff7a00, -5px 0 #fe848f',
+                    ease: 'power2.inOut',
+                    duration: duration,
+                    onComplete: () => {
+                      gsap.to(titleRef.value, {
+                        skewX: 0,
+                        textShadow: '0 0 10px rgba(255, 122, 0, 0.8)',
+                        duration: duration,
+                        onComplete: () => {
+                          setTimeout(glitchLoop, delay * 1000)
+                        }
+                      })
+                    }
+                  })
+                }
+                glitchLoop()
               }
-              glitchLoop()
             }
           }
-        }
-      )
-    }
-
-    const terminalText = document.querySelector('.terminal-command')
-    if (terminalText) {
-      gsap.from(terminalText, {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: terminalText,
-          start: 'top bottom-=50',
-          end: 'bottom center',
-          once: true
-        }
-      })
-    }
-
-    if (servicesRef.value && servicesRef.value.length) {
-      const masterServicesTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.value,
-          start: 'top 70%',
-          end: 'bottom bottom',
-          toggleActions: 'play none none none',
-          once: true,
-          id: 'services-master'
-        }
-      })
-
-      servicesRef.value.forEach((service, index) => {
-        if (!service) return
-
-        const serviceTl = gsap.timeline({ id: `service-${index}-timeline` })
-
-        const direction = index % 2 === 0 ? -50 : 50
-        const delay = index * 0.4
-
-        serviceTl.fromTo(
-          service,
-          {
-            y: 80,
-            x: direction,
-            opacity: 0,
-            scale: 0.9,
-            rotationX: index % 2 === 0 ? 5 : -5
-          },
-          {
-            y: 0,
-            x: 0,
-            opacity: 1,
-            scale: 1,
-            rotationX: 0,
-            duration: 1.2,
-            ease: 'power3.out'
-          }
         )
+      }
 
-        const techTags = service.querySelectorAll('.tech-tag')
-        if (techTags.length) {
+      const terminalText = document.querySelector('.terminal-command')
+      if (terminalText) {
+        gsap.from(terminalText, {
+          opacity: 0,
+          scrollTrigger: {
+            trigger: terminalText,
+            start: 'top bottom-=50',
+            end: 'bottom center',
+            once: true
+          }
+        })
+      }
+
+      if (servicesRef.value && servicesRef.value.length) {
+        const masterServicesTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.value,
+            start: 'top 70%',
+            end: 'bottom bottom',
+            toggleActions: 'play none none none',
+            once: true,
+            id: 'services-master'
+          }
+        })
+
+        servicesRef.value.forEach((service, index) => {
+          if (!service) return
+
+          const serviceTl = gsap.timeline({ id: `service-${index}-timeline` })
+
+          const direction = index % 2 === 0 ? -50 : 50
+          const delay = index * 0.4
+
           serviceTl.fromTo(
-            techTags,
-            { opacity: 0, y: 10 },
+            service,
             {
-              opacity: 1,
-              y: 0,
-              duration: 0.7,
-              stagger: 0.1,
-              ease: 'power2.out'
+              y: 80,
+              x: direction,
+              opacity: 0,
+              scale: 0.9,
+              rotationX: index % 2 === 0 ? 5 : -5
             },
-            '-=0.5'
+            {
+              y: 0,
+              x: 0,
+              opacity: 1,
+              scale: 1,
+              rotationX: 0,
+              duration: 1.2,
+              ease: 'power3.out'
+            }
           )
-        }
 
-        masterServicesTl.add(serviceTl, delay)
-      })
-    }
+          const techTags = service.querySelectorAll('.tech-tag')
+          if (techTags.length) {
+            serviceTl.fromTo(
+              techTags,
+              { opacity: 0, y: 10 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.7,
+                stagger: 0.1,
+                ease: 'power2.out'
+              },
+              '-=0.5'
+            )
+          }
 
-    const cursor = document.querySelector('.terminal-cursor')
-    if (cursor) {
-      gsap.to(cursor, {
-        opacity: 0,
-        duration: 0.5,
-        repeat: -1,
-        yoyo: true
-      })
-    }
-  }, sectionRef.value)
+          masterServicesTl.add(serviceTl, delay)
+        })
+      }
+
+      const cursor = document.querySelector('.terminal-cursor')
+      if (cursor) {
+        gsap.to(cursor, {
+          opacity: 0,
+          duration: 0.5,
+          repeat: -1,
+          yoyo: true
+        })
+      }
+    }, sectionRef.value)
+  }
 })
 
 onUnmounted(() => {
@@ -207,8 +210,8 @@ onUnmounted(() => {
     ref="sectionRef"
     class="relative overflow-hidden cyber-background flex justify-center items-center"
   >
-    <ScrollingBanner text="Serviços ✦" class="top-0" />
-    <ScrollingBanner text="Serviços ✦" direction="left-right" class="bottom-0" />
+    <ScrollingBanner :text="bannerText" class="top-0" />
+    <ScrollingBanner :text="bannerText" direction="left-right" class="bottom-0" />
 
     <section
       id="what_do_i_do_section"
@@ -221,7 +224,7 @@ onUnmounted(() => {
             :key="'service-' + index"
             :ref="
               (el) => {
-                if (el) servicesRef[index] = el
+                if (el) servicesRef[index] = el as HTMLElement
               }
             "
             :class="[

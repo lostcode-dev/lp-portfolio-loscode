@@ -11,9 +11,9 @@ gsap.registerPlugin(ScrollTrigger)
 
 const sectionRef = ref(null)
 const titleRef = ref(null)
-const projectsRef = ref([])
+const projectsRef = ref<(HTMLElement | null)[]>([])
 const splideRef = ref(null)
-let ctx = null
+let ctx: gsap.Context | null = null
 
 const splideOptions = computed(() => ({
   type: 'loop',
@@ -29,7 +29,7 @@ const splideOptions = computed(() => ({
   pauseOnFocus: true,
   pagination: true,
   arrows: true,
-  speed: 300, // Faster slide transition speed
+  speed: 300,
   easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
   classes: {
     pagination: 'splide__pagination cyber-pagination',
@@ -58,7 +58,7 @@ const projects = [
     title: 'Synthwave Dashboard',
     description: 'A dashboard inspired by the 80s synthwave aesthetic.',
     link: '#',
-    image: 'https://placehold.co/400x300',
+    image: 'https://placehold.co/600x400',
     featured: false
   },
   {
@@ -66,7 +66,7 @@ const projects = [
     title: 'Retro Portfolio',
     description: 'A portfolio showcasing retro-inspired designs and animations.',
     link: '#',
-    image: 'https://placehold.co/400x600',
+    image: 'https://placehold.co/600x400',
     featured: false
   },
   {
@@ -74,7 +74,7 @@ const projects = [
     title: 'Cyber Interface',
     description: 'A futuristic UI system with glowing elements and sharp angles.',
     link: '#',
-    image: 'https://placehold.co/300x300',
+    image: 'https://placehold.co/600x400',
     featured: false
   },
   {
@@ -82,7 +82,7 @@ const projects = [
     title: 'Digital Grid',
     description: 'An exploration of grid systems with interactive elements.',
     link: '#',
-    image: 'https://placehold.co/500x300',
+    image: 'https://placehold.co/600x400',
     featured: false
   },
   {
@@ -90,7 +90,7 @@ const projects = [
     title: 'AI Platform',
     description: 'An intelligent platform with machine learning capabilities and intuitive UI.',
     link: '#',
-    image: 'https://placehold.co/500x500',
+    image: 'https://placehold.co/600x400',
     featured: false
   },
   {
@@ -98,154 +98,115 @@ const projects = [
     title: 'Gaming Portal',
     description: 'Interactive gaming portal with achievements and social features.',
     link: '#',
-    image: 'https://placehold.co/600x300',
+    image: 'https://placehold.co/600x400',
     featured: false
   }
 ]
 
 const responsiveProjects = computed(() => projects)
+const bannerText = 'Projetos ✦ Projects ✦ Proyectos ✦ Projets ✦ Projekte ✦ '
 
 onMounted(() => {
-  ctx = gsap.context(() => {
-    if (titleRef.value) {
-      gsap.fromTo(
-        titleRef.value,
-        { opacity: 0, y: -30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: titleRef.value,
-            start: 'top bottom-=100',
-            end: 'bottom center',
-            toggleActions: 'play none none none',
-            once: true,
-            onEnter: () => {
-              const glitchLoop = () => {
-                if (!titleRef.value) return
+  if (sectionRef.value) {
+    ctx = gsap.context(() => {
+      if (titleRef.value) {
+        gsap.fromTo(
+          titleRef.value,
+          { opacity: 0, y: -30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: titleRef.value,
+              start: 'top bottom-=100',
+              end: 'bottom center',
+              toggleActions: 'play none none none',
+              once: true,
+              onEnter: () => {
+                const glitchLoop = () => {
+                  if (!titleRef.value) return
 
-                const duration = 0.1
-                const delay = Math.random() * 5 + 3
+                  const duration = 0.1
+                  const delay = Math.random() * 5 + 3
 
-                gsap.to(titleRef.value, {
-                  skewX: 20,
-                  textShadow: '5px 0 #ff7a00, -5px 0 #fe848f',
-                  ease: 'power2.inOut',
-                  duration: duration,
-                  onComplete: () => {
-                    gsap.to(titleRef.value, {
-                      skewX: 0,
-                      textShadow: '0 0 10px rgba(255, 122, 0, 0.8)',
-                      duration: duration,
-                      onComplete: () => {
-                        setTimeout(glitchLoop, delay * 1000)
-                      }
-                    })
-                  }
-                })
+                  gsap.to(titleRef.value, {
+                    skewX: 20,
+                    textShadow: '5px 0 #ff7a00, -5px 0 #fe848f',
+                    ease: 'power2.inOut',
+                    duration: duration,
+                    onComplete: () => {
+                      gsap.to(titleRef.value, {
+                        skewX: 0,
+                        textShadow: '0 0 10px rgba(255, 122, 0, 0.8)',
+                        duration: duration,
+                        onComplete: () => {
+                          setTimeout(glitchLoop, delay * 1000)
+                        }
+                      })
+                    }
+                  })
+                }
+                glitchLoop()
               }
-              glitchLoop()
             }
           }
-        }
-      )
-    }
-
-    if (projectsRef.value && projectsRef.value.length) {
-      const masterProjectsTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.value,
-          start: 'top 70%',
-          end: 'bottom bottom',
-          toggleActions: 'play none none none',
-          once: true,
-          id: 'projects-master'
-        }
-      })
-
-      projectsRef.value.forEach((project, index) => {
-        if (!project) return
-
-        const projectTl = gsap.timeline({ id: `project-${index}-timeline` })
-        const direction = index % 2 === 0 ? -30 : 30
-        const itemDelay = index * 0.1
-
-        projectTl.fromTo(
-          project,
-          {
-            y: 50,
-            x: direction,
-            opacity: 0,
-            scale: 0.95
-          },
-          {
-            y: 0,
-            x: 0,
-            opacity: 1,
-            scale: 1,
-            duration: 1,
-            ease: 'power3.out'
-          }
         )
+      }
 
-        masterProjectsTl.add(projectTl, itemDelay)
-      })
-    }
+      if (projectsRef.value && projectsRef.value.length) {
+        const masterProjectsTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.value,
+            start: 'top 70%',
+            end: 'bottom bottom',
+            toggleActions: 'play none none none',
+            once: true,
+            id: 'projects-master'
+          }
+        })
 
-    const cursor = document.querySelector('.terminal-cursor')
-    if (cursor) {
-      gsap.to(cursor, {
-        opacity: 0,
-        duration: 0.5,
-        repeat: -1,
-        yoyo: true
-      })
-    }
-  }, sectionRef.value)
+        projectsRef.value.forEach((project, index) => {
+          if (!project) return
 
-  nextTick(() => {
-    const arrows = document.querySelectorAll('.cyber-arrow')
-    arrows.forEach((arrow) => {
-      gsap.to(arrow, {
-        border: '1px solid rgba(255, 122, 0, 1)',
-        boxShadow: '0 0 10px rgba(255, 122, 0, 0.7)',
-        duration: 0.3,
-        repeat: -1,
-        yoyo: true,
-        repeatDelay: 3
-      })
-    })
+          const projectTl = gsap.timeline({ id: `project-${index}-timeline` })
+          const direction = index % 2 === 0 ? -30 : 30
+          const itemDelay = index * 0.1
 
-    if (splideRef.value) {
-      const activeSlide = document.querySelector('.splide__slide.is-active .project-card')
-      if (activeSlide) {
-        gsap.to(activeSlide, {
-          boxShadow: '0 0 30px rgba(255, 122, 0, 0.4), 0 0 15px rgba(255, 71, 255, 0.3)',
-          duration: 0.15 // Faster animation
+          projectTl.fromTo(
+            project,
+            {
+              y: 50,
+              x: direction,
+              opacity: 0,
+              scale: 0.95
+            },
+            {
+              y: 0,
+              x: 0,
+              opacity: 1,
+              scale: 1,
+              duration: 1,
+              ease: 'power3.out'
+            }
+          )
+
+          masterProjectsTl.add(projectTl, itemDelay)
         })
       }
 
-      splideRef.value.splide.on('moved', () => {
-        const slides = document.querySelectorAll('.splide__slide .project-card')
-        slides.forEach((slide) => {
-          gsap.to(slide, {
-            boxShadow: 'none',
-            duration: 0.1 // Much faster reset
-          })
+      const cursor = document.querySelector('.terminal-cursor')
+      if (cursor) {
+        gsap.to(cursor, {
+          opacity: 0,
+          duration: 0.5,
+          repeat: -1,
+          yoyo: true
         })
-
-        const activeSlide = document.querySelector('.splide__slide.is-active .project-card')
-        if (activeSlide) {
-          gsap.to(activeSlide, {
-            boxShadow: '0 0 30px rgba(255, 122, 0, 0.4), 0 0 15px rgba(255, 71, 255, 0.3)',
-            duration: 0.15 // Faster animation
-          })
-        }
-      })
-    }
-  })
+      }
+    }, sectionRef.value)
+  }
 })
 
 onUnmounted(() => {
@@ -257,8 +218,8 @@ onUnmounted(() => {
 
 <template>
   <div ref="sectionRef" class="relative overflow-hidden cyber-background">
-    <ScrollingBanner text="Projetos ✦" class="top-0" />
-    <ScrollingBanner text="Projetos ✦" direction="left-right" class="bottom-0" />
+    <ScrollingBanner :text="bannerText" class="top-0" />
+    <ScrollingBanner :text="bannerText" direction="left-right" class="bottom-0" />
 
     <section
       id="projects_section"
@@ -275,7 +236,7 @@ onUnmounted(() => {
               <div
                 :ref="
                   (el) => {
-                    if (el) projectsRef[index] = el
+                    if (el) projectsRef[index] = el as HTMLElement
                   }
                 "
                 :class="['project-card', project.featured ? 'bento-featured' : '']"

@@ -29,7 +29,7 @@ onMounted(() => {
     )
     createScrollAnimation(
       '.cmd-work',
-      { x: '50%', opacity: 0 },
+      { x: '60%', opacity: 0 },
       { x: '0%', opacity: 1 },
       '#who_am_i_section',
       'top 70%',
@@ -45,7 +45,7 @@ onMounted(() => {
     )
     createScrollAnimation(
       '.cmd-citation',
-      { x: '50%', opacity: 0 },
+      { x: '65%', opacity: 0 },
       { x: '0%', opacity: 1 },
       '#who_am_i_section',
       'top 50%',
@@ -71,15 +71,16 @@ onMounted(() => {
 const key = computed(() => {
   return Math.round(width.value / 100)
 })
+const bannerText = 'Sobre mim ✦ About me ✦ Sobre mí ✦ À propos de moi ✦ Über mich ✦ '
 </script>
 
 <template>
   <div id="who_am_i_container" class="bg-black/80 py-6 sm:py-8 relative h-screen panel w-screen">
-    <ScrollingBanner text="Sobre mim ✦" />
+    <ScrollingBanner :text="bannerText" />
 
     <AboutBackground secondary-color="rgb(128, 0, 128)" />
 
-    <ScrollingBanner text="Sobre mim ✦" direction="left-right" class="bottom-0" />
+    <ScrollingBanner :text="bannerText" direction="left-right" class="bottom-0" />
 
     <section
       id="who_am_i_section"

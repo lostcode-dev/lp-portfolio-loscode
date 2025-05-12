@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import AboutBackground from '@/components/background/AboutBackground.vue'
 import { ref, onMounted, computed, onUnmounted, nextTick } from 'vue'
-import { useI18n } from 'vue-i18n'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ScrollingBanner from '@/components/ScrollingBanner.vue'
@@ -18,12 +17,11 @@ interface Article {
   featured?: boolean
 }
 
-const { t } = useI18n()
 const articles = ref<Article[]>([])
 const sectionRef = ref(null)
 const gridRef = ref(null)
-const articleRefs = ref([])
-let ctx = null
+const articleRefs = ref<(HTMLElement | null | undefined)[]>([])
+let ctx: gsap.Context | null = null
 
 const isMobile = ref(window.innerWidth < 768)
 const isSmallScreen = ref(window.innerWidth < 1024)
@@ -87,52 +85,54 @@ onMounted(() => {
   updateResponsiveState()
   window.addEventListener('resize', updateResponsiveState)
 
-  ctx = gsap.context(() => {
-    nextTick(() => {
-      if (articleRefs.value && articleRefs.value.length) {
-        const masterArticlesTl = gsap.timeline({
-          scrollTrigger: {
-            trigger: sectionRef.value,
-            start: 'top 70%',
-            end: 'bottom bottom',
-            toggleActions: 'play none none none',
-            once: true,
-            id: 'articles-master'
-          }
-        })
-
-        articleRefs.value.forEach((article, index) => {
-          if (!article) return
-
-          const delay = 0.2 + index * 0.15
-
-          const articleTl = gsap.timeline({ id: `article-${index}-timeline` })
-
-          const xDirection = index % 2 === 0 ? -30 : 30
-
-          articleTl.fromTo(
-            article,
-            {
-              y: 50,
-              x: xDirection,
-              opacity: 0,
-              scale: 0.95
-            },
-            {
-              y: 0,
-              x: 0,
-              opacity: 1,
-              scale: 1,
-              duration: 1,
-              ease: 'power3.out'
+  if (sectionRef.value) {
+    ctx = gsap.context(() => {
+      nextTick(() => {
+        if (articleRefs.value && articleRefs.value.length) {
+          const masterArticlesTl = gsap.timeline({
+            scrollTrigger: {
+              trigger: sectionRef.value,
+              start: 'top 70%',
+              end: 'bottom bottom',
+              toggleActions: 'play none none none',
+              once: true,
+              id: 'articles-master'
             }
-          )
+          })
 
-          masterArticlesTl.add(articleTl, delay)
-        })
-      }
-    })
-  }, sectionRef.value)
+          articleRefs.value.forEach((article, index) => {
+            if (!article) return
+
+            const delay = 0.2 + index * 0.15
+
+            const articleTl = gsap.timeline({ id: `article-${index}-timeline` })
+
+            const xDirection = index % 2 === 0 ? -30 : 30
+
+            articleTl.fromTo(
+              article,
+              {
+                y: 50,
+                x: xDirection,
+                opacity: 0,
+                scale: 0.95
+              },
+              {
+                y: 0,
+                x: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 1,
+                ease: 'power3.out'
+              }
+            )
+
+            masterArticlesTl.add(articleTl, delay)
+          })
+        }
+      })
+    }, sectionRef.value)
+  }
 })
 
 onUnmounted(() => {
@@ -141,12 +141,14 @@ onUnmounted(() => {
     ctx.revert()
   }
 })
+
+const bannerText = 'Artigos ✦ Articles ✦ Blog ✦ Artículos ✦ Blogs ✦'
 </script>
 
 <template>
   <div ref="sectionRef" class="relative py-8 md:py-12 lg:py-16 overflow-hidden cyber-background">
-    <ScrollingBanner text="Articles ✦ Blog ✦" class="top-0" />
-    <ScrollingBanner text="Articles ✦ Blog ✦" direction="left-right" class="bottom-0" />
+    <ScrollingBanner :text="bannerText" class="top-0" />
+    <ScrollingBanner :text="bannerText" direction="left-right" class="bottom-0" />
 
     <section id="article_section" class="relative z-20 px-4 sm:px-6 lg:px-8">
       <div class="cyber-container max-w-7xl mx-auto">
@@ -159,7 +161,7 @@ onUnmounted(() => {
               target="_blank"
               :ref="
                 (el) => {
-                  if (el) articleRefs[index] = el
+                  if (el) articleRefs[index] = el as HTMLElement
                 }
               "
               :class="[
@@ -173,7 +175,7 @@ onUnmounted(() => {
 
                 <div class="image-container">
                   <img
-                    :src="article.thumbnail"
+                    :src="article.thumbnail || undefined"
                     :alt="article.title"
                     class="article-image"
                     loading="lazy"

@@ -2,25 +2,18 @@
 import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import CommandLine from '@/components/CommandLine.vue'
-import MeshGradient from '@/components/background/MeshGradientBg.vue'
-import SkillCardButton from '@/components/section/letsWork/partials/SkillCardButton.vue'
 
-// Refs for animations
 const formRef = ref(null)
-const formElementsRef = ref(null)
+const formElementsRef = ref<HTMLElement | null>(null)
 const gridRef = ref(null)
-// Add a new ref for the section element to observe
 const sectionRef = ref(null)
 
-// Animation triggered flag
 const animationsTriggered = ref(false)
 
-// Run animations when component is visible
 const runAnimations = () => {
   if (animationsTriggered.value) return
   animationsTriggered.value = true
 
-  // Grid lines animation
   if (gridRef.value) {
     gsap.from('.grid-line', {
       width: 0,
@@ -37,7 +30,6 @@ const runAnimations = () => {
     })
   }
 
-  // Form animations
   if (formRef.value) {
     gsap.from(formRef.value, {
       opacity: 0,
@@ -47,7 +39,6 @@ const runAnimations = () => {
     })
   }
 
-  // Form elements staggered animation
   if (formElementsRef.value) {
     const elements = formElementsRef.value.querySelectorAll('.form-element')
     gsap.from(elements, {
@@ -61,7 +52,6 @@ const runAnimations = () => {
   }
 }
 
-// Set up Intersection Observer to trigger animations when section is visible
 onMounted(() => {
   const observer = new IntersectionObserver(
     (entries) => {
@@ -75,12 +65,10 @@ onMounted(() => {
     { threshold: 0.1 }
   )
 
-  // Use the section element for intersection observation instead of formRef
   if (sectionRef.value) {
     observer.observe(sectionRef.value)
   }
 
-  // Cursor blink effect
   const blinkCursor = () => {
     const cursor = document.querySelector('.terminal-cursor')
     if (cursor) {
@@ -99,7 +87,6 @@ onMounted(() => {
 
 <template>
   <div class="retro-futuristic relative overflow-hidden py-12 sm:py-16">
-    <!-- Grid background -->
     <div ref="gridRef" class="retro-grid">
       <div v-for="i in 20" :key="`h-${i}`" class="grid-line" :style="`top: ${i * 5}%`"></div>
       <div
@@ -110,7 +97,6 @@ onMounted(() => {
       ></div>
     </div>
 
-    <!-- Cyber circles decoration -->
     <div class="cyber-circle circle-1"></div>
     <div class="cyber-circle circle-2"></div>
 
