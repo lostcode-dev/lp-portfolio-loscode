@@ -89,6 +89,18 @@ export default {
         Includes <strong>interface design</strong>, <strong>animations</strong>, <strong>immersive experiences</strong>, and custom interactive solutions.<br>
         The focus is on <em>creativity</em>, <em>usability</em>, and <em>visual impact</em>, ensuring that digital products are engaging and memorable. <br>
         Include <strong>interactive 3D websites</strong>, <strong>WebGL experiences</strong>, <strong>generative design</strong>, and <strong>dynamic Motion Design animations</strong> that captivate users.`,
+        bots_automation: `
+        Automate processes with <strong>intelligent bots</strong> that work for you 24/7.<br>
+        I develop <strong>custom bots</strong> for platforms like <em>Telegram, Discord, and WhatsApp</em>, as well as API integrations, scraping, and automated workflows using AI.<br>
+        Ideal for those who want to <strong>scale operations</strong>, reduce repetitive tasks, and <strong>enhance digital reach</strong>.<br>
+        Examples include: <em>customer service bots, automatic notifications, user interactions, and data collection</em>.
+        `,
+        product_optimization: `
+        Technical consulting focused on <strong>improving existing digital products</strong> — perfect for startups and micro-SaaS that want to <em>scale with quality</em>.<br>
+        I perform <strong>system audits</strong>, analyses of <em>performance</em>, <em>architecture</em>, and <em>user experience</em>, proposing practical and sustainable improvements.<br>
+        The goal is to transform a functional system into a product that is <strong>fast</strong>, <strong>scalable</strong>, and <strong>ready to grow</strong>.<br>
+        Designed for products in early stages or those looking to reach the next level.
+        `
     },
     lets_work_together: 'Let’s work together on your next project.',
     transform_your_project: 'Transform your project into a digital experience.',

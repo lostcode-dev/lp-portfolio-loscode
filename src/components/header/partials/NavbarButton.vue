@@ -2,8 +2,8 @@
   <ul class="flex gap-2">
     <NavbarButtonItem v-for="link in socialMediaButtons" :key="link.ref" :link="link" />
   </ul>
-  <ul class="absolute top-0 right-0 flex gap-2 z-20">
-    <NavbarButtonLanguageItem :link="emailButton" />
+  <ul class="absolute top-0 right-0 flex gap-2 z-20 text-black">
+    <NavbarButtonLanguageItem />
     <NavbarButtonItem :link="emailButton" />
     <NavbarButtonMenuItem />
   </ul>
@@ -11,7 +11,7 @@
 
 <script setup>
 import GithubIcon from '../../icons/GithubIcon.vue'
-import MediumIcon from '../../icons/MediumIcon.vue'
+import LinkedinIcon from '../../icons/LinkedinIcon.vue'
 import InstagramIcon from '../../icons/InstagramIcon.vue'
 import EmailIcon from '../../icons/EmailIcon.vue'
 
@@ -26,8 +26,8 @@ const socialMediaButtons = [
     href: 'https://github.com/lostcode-dev'
   },
   {
-    icon: MediumIcon,
-    ref: 'mediumBtn',
+    icon: LinkedinIcon,
+    ref: 'linkedinBtn',
     href: 'https://ilostcode.medium.com/'
   },
   {

@@ -14,7 +14,7 @@ function generateFromLeftAnimation() {
   const fromLeft = { x: -350 }
 
   gsap.fromTo('#githubBtn', fromLeft, { ...lastTimeElement, ...toRotate })
-  gsap.fromTo('#mediumBtn', fromLeft, { ...mediumTimeElement, ...toRotate })
+  gsap.fromTo('#linkedinBtn', fromLeft, { ...mediumTimeElement, ...toRotate })
   gsap.fromTo('#instagramBtn', fromLeft, { ...firstTimeElement, ...toRotate })
 }
 

@@ -1,30 +1,25 @@
 <template>
   <svg
+    width="24px"
+    height="24px"
+    stroke-width="1.5"
+    viewBox="0 0 24 24"
+    fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    version="1.1"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    x="0"
-    y="0"
-    viewBox="0 0 433.664 433.664"
-    style="enable-background: new 0 0 512 512"
-    xml:space="preserve"
-    class=""
-    :style="{ fill: 'currentColor' }"
+    color="currentColor"
   >
-    <g>
-      <path
-        d="M229.376 271.616c-4.096 2.56-8.704 3.584-12.8 3.584s-8.704-1.024-12.8-3.584L0 147.2v165.376c0 35.328 28.672 64 64 64h305.664c35.328 0 64-28.672 64-64V147.2L229.376 271.616z"
-        opacity="1"
-        data-original="#000000"
-        class=""
-      ></path>
-      <path
-        d="M369.664 57.088H64c-30.208 0-55.808 21.504-61.952 50.176l215.04 131.072 214.528-131.072c-6.144-28.672-31.744-50.176-61.952-50.176z"
-        opacity="1"
-        data-original="#000000"
-        class=""
-      ></path>
-    </g>
+    <path
+      d="M7 9L12 12.5L17 9"
+      stroke="currentColor"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    ></path>
+    <path
+      d="M2 17V7C2 5.89543 2.89543 5 4 5H20C21.1046 5 22 5.89543 22 7V17C22 18.1046 21.1046 19 20 19H4C2.89543 19 2 18.1046 2 17Z"
+      stroke="currentColor"
+      stroke-width="1.5"
+    ></path>
   </svg>
 </template>
 

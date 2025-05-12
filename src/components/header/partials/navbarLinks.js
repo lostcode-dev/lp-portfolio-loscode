@@ -21,7 +21,7 @@ export const navbarLinksLeft = [
 export const navbarLinksRight = [
     {
         label: 'portfolio',
-        href: '#home_section',
+        href: '#portfolio_section',
         class: 'navbar__link'
     },
     {

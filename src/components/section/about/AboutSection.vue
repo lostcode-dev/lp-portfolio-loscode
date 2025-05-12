@@ -9,6 +9,7 @@ import CmdWork from './partials/CmdWork.vue'
 import CmdHobbies from './partials/CmdHobbies.vue'
 import CmdCitation from './partials/CmdCitation.vue'
 import ImageProfile from '@/components/ImageProfile.vue'
+import ScrollingBanner from '@/components/ScrollingBanner.vue'
 import { useWindowSize } from '@vueuse/core'
 
 gsap.registerPlugin(Draggable)
@@ -74,7 +75,11 @@ const key = computed(() => {
 
 <template>
   <div id="who_am_i_container" class="bg-black/80 py-6 sm:py-8 relative h-screen panel w-screen">
+    <ScrollingBanner text="Sobre mim ✦" />
+
     <AboutBackground secondary-color="rgb(128, 0, 128)" />
+
+    <ScrollingBanner text="Sobre mim ✦" direction="left-right" class="bottom-0" />
 
     <section
       id="who_am_i_section"

@@ -89,6 +89,18 @@ export default {
           El enfoque está en la <em>creatividad</em>, <em>usabilidad</em> e <em>impacto visual</em>, asegurando que los productos digitales sean atractivos y memorables. <br>
           Incluyen <strong>sitios web 3D interactivos</strong>, <strong>experiencias con WebGL</strong>, <strong>diseño generativo</strong> y <strong>animaciones de Motion Design</strong> que cautivan al usuario.
          `,
+         bots_automation: `
+    Automatice procesos con <strong>bots inteligentes</strong> que trabajan para usted 24/7.<br>
+    Desarrollo <strong>bots personalizados</strong> para plataformas como <em>Telegram, Discord y WhatsApp</em>, además de integraciones con APIs, scraping y flujos automatizados usando IA.<br>
+    Ideal para quienes desean <strong>ganar escala</strong>, reducir tareas repetitivas y <strong>potenciar el alcance digital</strong>.<br>
+    Los ejemplos incluyen: <em>bots de atención al cliente, notificaciones automáticas, interacciones con usuarios y recopilación de datos</em>.
+    `,
+    product_optimization: `
+    Consultoría técnica enfocada en <strong>mejorar productos digitales existentes</strong> — ideal para startups y micro-SaaS que desean <em>escalar con calidad</em>.<br>
+    Realizo <strong>auditorías de sistema</strong>, análisis de <em>rendimiento</em>, <em>arquitectura</em> y <em>experiencia de usuario</em>, proponiendo mejoras prácticas y sostenibles.<br>
+    El objetivo es transformar un sistema funcional en un producto <strong>rápido</strong>, <strong>escalable</strong> y <strong>listo para crecer</strong>.<br>
+    Pensado para productos en etapa inicial o que buscan alcanzar el siguiente nivel.
+    `,
     lets_work_together: 'Trabajemos juntos en su próximo proyecto.',
     transform_your_project: 'Transforma tu proyecto en una experiencia.',
     lets_develop_your: 'Desarrollemos tu próxima gran idea.',
